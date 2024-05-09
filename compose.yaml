@@ -1,0 +1,10 @@
+services:
+    trollroom:
+        image: node
+        working_dir: /srv
+        command: "yarn start"
+        ports:
+            - "9000:9000"
+        volumes:
+            - "./config:/root/.thelounge"
+            - "./:/srv"
