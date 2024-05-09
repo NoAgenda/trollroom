@@ -288,6 +288,9 @@ p {
 
 #viewport .lt::before,
 #viewport .rt::before,
+#player button.play::before,
+#player button.pause::before,
+#player button.volume::before,
 #chat button.mentions::before,
 #chat button.close::before,
 #chat button.menu::before,
@@ -352,6 +355,11 @@ p {
 
 #viewport .lt::before { content: "\f0c9"; /* http://fontawesome.io/icon/bars/ */ }
 #viewport .rt::before { content: "\f0c0"; /* https://fontawesome.com/icons/users?style=solid */ }
+#player button.play::before { content: "\f04b"; /* http://fontawesome.io/icon/play/ */ }
+#player button.pause::before { content: "\f04d"; /* http://fontawesome.io/icon/stop/ */ }
+#player button.volume-high::before { content: "\f028"; /* http://fontawesome.io/icon/volume-high/ */ }
+#player button.volume-low::before { content: "\f027"; /* http://fontawesome.io/icon/volume-low/ */ }
+#player button.volume-muted::before { content: "\f6a9"; /* http://fontawesome.io/icon/volume-xmark/ */ }
 #chat button.menu::before { content: "\f142"; /* http://fontawesome.io/icon/ellipsis-v/ */ }
 #chat button.mentions::before { content: "\f1fa"; /* https://fontawesome.com/icons/at?style=solid */ }
 #chat button.search::before { content: "\f002"; /* https://fontawesome.com/icons/search?style=solid */ }
@@ -611,6 +619,9 @@ p {
 
 #viewport .lt,
 #viewport .rt,
+#player button.play,
+#player button.pause,
+#player button.volume,
 #chat button.mentions,
 #chat button.search,
 #chat button.menu,
@@ -626,6 +637,9 @@ p {
 
 #viewport .lt::before,
 #viewport .rt::before,
+#player button.play::before,
+#player button.pause::before,
+#player button.volume::before,
 #chat button.mentions::before,
 #chat button.search::before,
 #chat button.menu::before,
@@ -2936,4 +2950,10 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	height: 100%;
 	justify-content: center;
 	align-items: center;
+}
+
+#player {
+	position: sticky;
+	top: 0;
+	background-color: var(--highlight-bg-color);
 }

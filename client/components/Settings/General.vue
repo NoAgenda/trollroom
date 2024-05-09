@@ -8,7 +8,7 @@
 				class="btn"
 				@click.prevent="nativeInstallPrompt"
 			>
-				Add The Lounge to Home screen
+				Add Troll Room to Home screen
 			</button>
 			<button
 				v-if="canRegisterProtocol"

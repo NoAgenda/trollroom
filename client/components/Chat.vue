@@ -16,6 +16,7 @@
 				:aria-label="channel.name"
 				role="tabpanel"
 			>
+				<Player />
 				<div class="header">
 					<SidebarToggle />
 					<span class="title" :aria-label="'Currently open ' + channel.type">{{
@@ -123,6 +124,7 @@
 <script lang="ts">
 import socket from "../js/socket";
 import eventbus from "../js/eventbus";
+import Player from "./Player.vue";
 import ParsedMessage from "./ParsedMessage.vue";
 import MessageList from "./MessageList.vue";
 import ChatInput from "./ChatInput.vue";
@@ -141,6 +143,7 @@ import {SpecialChanType, ChanType} from "../../shared/types/chan";
 export default defineComponent({
 	name: "Chat",
 	components: {
+		Player,
 		ParsedMessage,
 		MessageList,
 		ChatInput,

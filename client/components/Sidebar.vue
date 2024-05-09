@@ -3,15 +3,15 @@
 		<div class="scrollable-area">
 			<div class="logo-container">
 				<img
-					:src="`img/logo-${isPublic() ? 'horizontal-' : ''}transparent-bg.svg`"
+					src="img/noagenda-logo.svg"
 					class="logo"
-					alt="The Lounge"
+					alt="Troll Room"
 					role="presentation"
 				/>
 				<img
-					:src="`img/logo-${isPublic() ? 'horizontal-' : ''}transparent-bg-inverted.svg`"
+					src="img/noagenda-logo.svg"
 					class="logo-inverted"
-					alt="The Lounge"
+					alt="Troll Room"
 					role="presentation"
 				/>
 				<span
@@ -23,6 +23,7 @@
 						padding: '2px',
 						borderRadius: '4px',
 						fontSize: '12px',
+						marginLeft: '6px',
 					}"
 					>DEVELOPER</span
 				>

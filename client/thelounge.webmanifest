@@ -1,7 +1,7 @@
 {
-	"name": "The Lounge",
-	"short_name": "The Lounge",
-	"description": "Self-hosted web IRC client",
+	"name": "Troll Room",
+	"short_name": "Troll Room",
+	"description": "The official No Agenda Troll Room",
 	"start_url": ".",
 	"display": "standalone",
 	"theme_color": "#415364",
@@ -44,7 +44,7 @@
 			"sizes": "512x512"
 		},
 		{
-			"src": "img/logo-grey-bg.svg",
+			"src": "img/noagenda-logo.svg",
 			"type": "image/svg+xml",
 			"purpose": "maskable any",
 			"sizes": "513x513"

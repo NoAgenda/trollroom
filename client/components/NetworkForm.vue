@@ -1,5 +1,6 @@
 <template>
 	<div id="connect" class="window" role="tabpanel" aria-label="Connect">
+		<Player />
 		<div class="header">
 			<SidebarToggle />
 		</div>
@@ -220,6 +221,7 @@
 					@input="onNickChanged"
 				/>
 			</div>
+			<!--
 			<template v-if="!config?.useHexIp">
 				<div class="connect-row">
 					<label for="connect:username">Username</label>
@@ -251,9 +253,10 @@
 					autocomplete="off"
 					class="input"
 					name="leaveMessage"
-					placeholder="The Lounge - https://thelounge.chat"
+					placeholder="Troll Room - https://trollroom.io"
 				/>
 			</div>
+			-->
 			<template v-if="defaults.uuid && !store.state.serverConfiguration?.public">
 				<div class="connect-row">
 					<label for="connect:commands">
@@ -438,6 +441,7 @@ the server tab on new connection"
 </style>
 
 <script lang="ts">
+import Player from "./Player.vue";
 import RevealPassword from "./RevealPassword.vue";
 import SidebarToggle from "./SidebarToggle.vue";
 import {defineComponent, nextTick, PropType, ref, watch} from "vue";
@@ -451,6 +455,7 @@ export type NetworkFormDefaults = Partial<ClientNetwork> & {
 export default defineComponent({
 	name: "NetworkForm",
 	components: {
+		Player,
 		RevealPassword,
 		SidebarToggle,
 	},

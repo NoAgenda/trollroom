@@ -1,5 +1,6 @@
 <template>
 	<div id="settings" class="window" role="tabpanel" aria-label="Settings">
+		<Player />
 		<div class="header">
 			<SidebarToggle />
 		</div>
@@ -15,6 +16,7 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
+import Player from "../Player.vue";
 import SidebarToggle from "../SidebarToggle.vue";
 import Navigation from "../Settings/Navigation.vue";
 import {useStore} from "../../js/store";
@@ -22,6 +24,7 @@ import {useStore} from "../../js/store";
 export default defineComponent({
 	name: "Settings",
 	components: {
+		Player,
 		SidebarToggle,
 		Navigation,
 	},

@@ -14,7 +14,7 @@ module.exports = {
     //   channels and scrollbacks are available when they come back.
     //
     // This value is set to `false` by default.
-    public: false,
+    public: true,
     // ### `host`
     //
     // IP address or hostname for the web server to listen to. For example, set it
@@ -196,7 +196,7 @@ module.exports = {
     //
     // This value is set to `"The Lounge - https://thelounge.chat"` by
     // default.
-    leaveMessage: "The Lounge - https://thelounge.chat",
+    leaveMessage: "Troll Room - https://trollroom.io",
     // ## Default network
     // ### `defaults`
     //
@@ -241,16 +241,16 @@ module.exports = {
     // }
     // ```
     defaults: {
-        name: "Libera.Chat",
-        host: "irc.libera.chat",
-        port: 6697,
+        name: "Troll Room",
+        host: "irc.zeronode.net",
+        port: 6667,
         password: "",
-        tls: true,
+        tls: false,
         rejectUnauthorized: true,
-        nick: "thelounge%%",
-        username: "thelounge",
+        nick: "Troll%%%",
+        username: "Anonymous Troll",
         realname: "",
-        join: "#thelounge",
+        join: "#NoAgenda",
         leaveMessage: "",
     },
     // ### `lockNetwork`
@@ -260,7 +260,7 @@ module.exports = {
     // These fields will also be hidden from the UI.
     //
     // This value is set to `false` by default.
-    lockNetwork: false,
+    lockNetwork: true,
     // ## User management
     // ### `messageStorage`
     // The Lounge can log user messages, for example to access them later or to
@@ -275,7 +275,7 @@ module.exports = {
     // their JSON configuration file.
     //
     // This value is set to `["sqlite", "text"]` by default.
-    messageStorage: ["sqlite", "text"],
+    messageStorage: [],
     // ### `storagePolicy`
     // When the sqlite storage is in use, control the maximum storage duration.
     // A background task will periodically clean up messages older than the limit.

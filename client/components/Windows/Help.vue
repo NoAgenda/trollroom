@@ -1,5 +1,6 @@
 <template>
 	<div id="help" class="window" role="tabpanel" aria-label="Help">
+		<Player />
 		<div class="header">
 			<SidebarToggle />
 		</div>
@@ -7,84 +8,31 @@
 			<h1 class="title">Help</h1>
 
 			<h2 class="help-version-title">
-				<span>About The Lounge</span>
-				<small>
-					v{{ store.state.serverConfiguration?.version }} (<router-link
-						id="view-changelog"
-						to="/changelog"
-						>release notes</router-link
-					>)
-				</small>
+				<span>About The Troll Room</span>
 			</h2>
 
 			<div class="about">
-				<VersionChecker />
-
-				<template v-if="store.state.serverConfiguration?.gitCommit">
-					<p>
-						The Lounge is running from source (<a
-							:href="`https://github.com/thelounge/thelounge/tree/${store.state.serverConfiguration?.gitCommit}`"
-							target="_blank"
-							rel="noopener"
-							>commit <code>{{ store.state.serverConfiguration?.gitCommit }}</code></a
-						>).
-					</p>
-
-					<ul>
-						<li>
-							Compare
-							<a
-								:href="`https://github.com/thelounge/thelounge/compare/${store.state.serverConfiguration?.gitCommit}...master`"
-								target="_blank"
-								rel="noopener"
-								>between
-								<code>{{ store.state.serverConfiguration?.gitCommit }}</code> and
-								<code>master</code></a
-							>
-							to see what you are missing
-						</li>
-						<li>
-							Compare
-							<a
-								:href="`https://github.com/thelounge/thelounge/compare/${store.state.serverConfiguration?.version}...${store.state.serverConfiguration?.gitCommit}`"
-								target="_blank"
-								rel="noopener"
-								>between
-								<code>{{ store.state.serverConfiguration?.version }}</code> and
-								<code>{{ store.state.serverConfiguration?.gitCommit }}</code></a
-							>
-							to see your local changes
-						</li>
-					</ul>
-				</template>
+				<p>The No Agenda Stream...</p>
 
 				<p>
 					<a
-						href="https://thelounge.chat/"
+						href="https://www.noagendashow.net/"
 						target="_blank"
 						rel="noopener"
 						class="website-link"
-						>Website</a
-					>
+					>Website</a>
 				</p>
-				<p>
-					<a
-						href="https://thelounge.chat/docs/"
-						target="_blank"
-						rel="noopener"
-						class="documentation-link"
-						>Documentation</a
-					>
-				</p>
-				<p>
-					<a
-						href="https://github.com/thelounge/thelounge/issues/new"
-						target="_blank"
-						rel="noopener"
-						class="report-issue-link"
-						>Report an issue…</a
-					>
-				</p>
+
+				<h3>
+					<span>
+						Powered by
+						<a
+							href="https://thelounge.chat/"
+							target="_blank"
+							rel="noopener"
+						>The Lounge</a>
+					</span>
+				</h3>
 			</div>
 
 			<h2 v-if="isTouch">Gestures</h2>
@@ -430,6 +378,15 @@
 			</div>
 
 			<h2>Commands</h2>
+
+			<div class="help-item">
+				<div class="subject">
+					<code>[nick]++</code>
+				</div>
+				<div class="description">
+					<p>Give karma to a comrade troll.</p>
+				</div>
+			</div>
 
 			<div class="help-item">
 				<div class="subject">
@@ -855,12 +812,14 @@
 <script lang="ts">
 import {defineComponent, ref} from "vue";
 import {useStore} from "../../js/store";
+import Player from "../Player.vue";
 import SidebarToggle from "../SidebarToggle.vue";
 import VersionChecker from "../VersionChecker.vue";
 
 export default defineComponent({
 	name: "Help",
 	components: {
+		Player,
 		SidebarToggle,
 		VersionChecker,
 	},

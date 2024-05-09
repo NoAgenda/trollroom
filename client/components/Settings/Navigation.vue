@@ -6,7 +6,7 @@
 			<SettingTabItem name="General" class-name="general" to="" />
 			<SettingTabItem name="Appearance" class-name="appearance" to="appearance" />
 			<SettingTabItem name="Notifications" class-name="notifications" to="notifications" />
-			<SettingTabItem name="Account" class-name="account" to="account" />
+			<!--<SettingTabItem name="Account" class-name="account" to="account" />-->
 		</ul>
 	</aside>
 </template>
@@ -15,7 +15,7 @@
 .settings-menu {
 	position: fixed;
 	/* top: Header + (padding bottom of h2 - border) */
-	top: calc(45px + 5px);
+	top: calc(45px + 5px + 45px);
 	/* Mid page minus width of container and 30 pixels for padding */
 	margin-left: calc(50% - 480px - 30px);
 }
@@ -100,4 +100,7 @@ export default defineComponent({
 		SettingTabItem,
 	},
 });
+</script>
+
+<script setup lang="ts">
 </script>

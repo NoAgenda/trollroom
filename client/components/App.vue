@@ -125,9 +125,9 @@ export default defineComponent({
 			const viewportWidth = window.innerWidth;
 			let isUserlistOpen = storage.get("thelounge.state.userlist");
 
-			if (viewportWidth > constants.mobileViewportPixels) {
-				store.commit("sidebarOpen", storage.get("thelounge.state.sidebar") !== "false");
-			}
+			// if (viewportWidth > constants.mobileViewportPixels) {
+			//	store.commit("sidebarOpen", false);
+			// }
 
 			// If The Lounge is opened on a small screen (less than 1024px), and we don't have stored
 			// user list state, close it by default
