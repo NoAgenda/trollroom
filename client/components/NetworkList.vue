@@ -5,10 +5,10 @@
 		role="navigation"
 		aria-label="Network and Channel list"
 	>
-		You are not connected to any networks yet.
+		You are not connected to the Troll Room.
 	</div>
 	<div v-else ref="networklist" role="navigation" aria-label="Network and Channel list">
-		<div class="jump-to-input">
+		<div class="jump-to-input" v-if="false">
 			<input
 				ref="searchInput"
 				:value="searchText"

@@ -1,7 +1,7 @@
 {
-	"name": "Troll Room",
-	"short_name": "Troll Room",
-	"description": "The official No Agenda Troll Room",
+	"name": "No Agenda Stream",
+	"short_name": "NA Stream",
+	"description": "The official No Agenda Stream & Troll Room",
 	"start_url": ".",
 	"display": "standalone",
 	"theme_color": "#415364",
@@ -44,7 +44,7 @@
 			"sizes": "512x512"
 		},
 		{
-			"src": "img/noagenda-logo.svg",
+			"src": "img/trollroom-logo.svg",
 			"type": "image/svg+xml",
 			"purpose": "maskable any",
 			"sizes": "513x513"

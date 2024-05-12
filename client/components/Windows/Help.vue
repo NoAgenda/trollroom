@@ -5,24 +5,9 @@
 			<SidebarToggle />
 		</div>
 		<div class="container">
-			<h1 class="title">Help</h1>
-
-			<h2 class="help-version-title">
-				<span>About The Troll Room</span>
-			</h2>
+			<h1 class="title">Troll Room Help</h1>
 
 			<div class="about">
-				<p>The No Agenda Stream...</p>
-
-				<p>
-					<a
-						href="https://www.noagendashow.net/"
-						target="_blank"
-						rel="noopener"
-						class="website-link"
-					>Website</a>
-				</p>
-
 				<h3>
 					<span>
 						Powered by
@@ -34,6 +19,24 @@
 					</span>
 				</h3>
 			</div>
+
+			<p>
+				<a
+					href="https://phoneboy.com/trollroom"
+					target="_blank"
+					rel="noopener"
+					class="website-link"
+				>How to use the Troll Room</a>
+			</p>
+
+			<p>
+				<a
+					href="http://adam.curry.com/html/HowtoregisterfortheT-22VC1Zc7QQMdBNX0nWzCbfMDwD7KZN.html"
+					target="_blank"
+					rel="noopener"
+					class="website-link"
+				>Registration Instructions</a>
+			</p>
 
 			<h2 v-if="isTouch">Gestures</h2>
 
@@ -381,7 +384,7 @@
 
 			<div class="help-item">
 				<div class="subject">
-					<code>[nick]++</code>
+					<code>nick++</code>
 				</div>
 				<div class="description">
 					<p>Give karma to a comrade troll.</p>
@@ -814,14 +817,12 @@ import {defineComponent, ref} from "vue";
 import {useStore} from "../../js/store";
 import Player from "../Player.vue";
 import SidebarToggle from "../SidebarToggle.vue";
-import VersionChecker from "../VersionChecker.vue";
 
 export default defineComponent({
 	name: "Help",
 	components: {
 		Player,
 		SidebarToggle,
-		VersionChecker,
 	},
 	setup() {
 		const store = useStore();

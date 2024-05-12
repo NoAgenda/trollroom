@@ -15,39 +15,38 @@
 		<span
 			class="topic"
 			:title="`Currently playing: ${title}`"
+			@click="openLivestream"
 		>
 			{{ title }}
 		</span>
-		<button
-			class="volume volume-high"
-			aria-label="Current volume: 100%"
-		/>
 	</div>
 </template>
 
 <script lang="ts">
 import {defineComponent, onMounted, ref} from "vue";
-import Player from "../js/player";
-import MessageSearchForm from './MessageSearchForm.vue';
+import Player from "../js/player"
+import {router} from '../js/router';
 
 export default defineComponent({
 	name: 'Player',
-	components: {MessageSearchForm},
+	components: {},
 	setup() {
 		const playing = ref(Player.playing);
-		const title = ref(Player.title);
+		const title = ref(Player.music ? Player.musicTitle : Player.title);
 
 		const play = () => Player.play();
 		const pause = () => Player.pause();
+		const openLivestream = async () => await router.push({name: "Livestream"});
 
 		onMounted(() => {
 			Player.subscribe('update', (event: any) => {
 				playing.value = event.playing;
-				title.value = event.title;
+				title.value = event.music ? event.musicTitle : event.title;
 			});
 		});
 
 		return {
+			openLivestream,
 			play,
 			playing,
 			pause,

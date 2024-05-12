@@ -4,7 +4,9 @@ class Player {
 
 	loading: boolean = false;
 	playing: boolean = false;
+	music: boolean = false;
 	title: string = 'Loading stream data...';
+	musicTitle: string = 'Loading stream data...';
 
 	constructor() {
 		this.mediaPlayer = new Audio();
@@ -62,7 +64,10 @@ class Player {
 		const event = {
 			playing: this.playing,
 			loading: this.loading,
+			music: this.music,
 			title: this.title,
+			musicTitle: this.musicTitle,
+			volume: Math.round(this.mediaPlayer.volume * 100),
 		};
 
 		this.dispatch(eventId, event);
@@ -82,12 +87,38 @@ class Player {
 		}
 	}
 
+	playMusic() {
+		if (!this.music) {
+			this.mediaPlayer.src = 'https://listen.noagendastream.com/v4vmusic?type=.mp3';
+			this.music = true;
+			this.loading = true;
+		}
+
+		this.mediaPlayer.play();
+	}
+
+	playLivestream() {
+		if (this.music) {
+			this.mediaPlayer.src = 'https://listen.noagendastream.com/noagenda?type=.mp3';
+			this.music = false;
+			this.loading = true;
+		}
+
+		this.mediaPlayer.play();
+	}
+
+	setVolume(volume: number) {
+		this.mediaPlayer.volume = volume / 100;
+
+		this.dispatchMediaEvent('update');
+	}
+
 	fetchStreamData() {
 		fetch('https://listen.noagendastream.com/status-json.xsl')
 			.then(response => response.json())
 			.then(response => {
-				console.log(response);
 				this.title = response.icestats.source[0].title;
+				this.musicTitle = response.icestats.source[1].title;
 
 				if (!this.loading) {
 					this.dispatchMediaEvent('update');

@@ -32,6 +32,8 @@ socket.on("init", async function (data) {
 			window.g_TheLoungeRemoveLoading();
 		}
 
+		await router.push({name: "Livestream"});
+
 		if (await handleQueryParams()) {
 			// If we handled query parameters like irc:// links or just general
 			// connect parameters in public mode, then nothing to do here

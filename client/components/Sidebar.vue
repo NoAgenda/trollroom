@@ -3,13 +3,13 @@
 		<div class="scrollable-area">
 			<div class="logo-container">
 				<img
-					src="img/noagenda-logo.svg"
+					src="img/trollroom-logo.svg"
 					class="logo"
 					alt="Troll Room"
 					role="presentation"
 				/>
 				<img
-					src="img/noagenda-logo.svg"
+					src="img/trollroom-logo.svg"
 					class="logo-inverted"
 					alt="Troll Room"
 					role="presentation"
@@ -28,20 +28,27 @@
 					>DEVELOPER</span
 				>
 			</div>
+
+			<a href="#/livestream" class="channel-list-item" aria-label="Livestream" title="Livestream" data-name="Livestream" data-type="livestream">
+				<div class="lobby-wrap">
+					<span title="Livestream" class="name">Livestream</span>
+				</div>
+			</a>
+
 			<NetworkList />
 		</div>
 		<footer id="footer">
 			<span
 				class="tooltipped tooltipped-n tooltipped-no-touch"
-				aria-label="Connect to network"
+				aria-label="Information"
 				><router-link
 					v-slot:default="{navigate, isActive}"
-					to="/connect"
+					to="/information"
 					role="tab"
-					aria-controls="connect"
+					aria-controls="information"
 				>
 					<button
-						:class="['icon', 'connect', {active: isActive}]"
+						:class="['icon', 'info-circle', {active: isActive}]"
 						:aria-selected="isActive"
 						@click="navigate"
 						@keypress.enter="navigate"
@@ -63,11 +70,7 @@
 			></span>
 			<span
 				class="tooltipped tooltipped-n tooltipped-no-touch"
-				:aria-label="
-					store.state.serverConfiguration?.isUpdateAvailable
-						? 'Help\n(update available)'
-						: 'Help'
-				"
+				aria-label="Help"
 				><router-link
 					v-slot:default="{navigate, isActive}"
 					to="/help"

@@ -13,14 +13,14 @@
 	--body-bg-color: #415364;
 
 	/* Main button color. Applies to border, text, and background on hover */
-	--button-color: #84ce88;
+	--button-color: #77abd9;
 	--button-text-color-hover: #fff;
 
 	/* Color for sidebar overlay and other things that dim the viewport when something else is on top */
 	--overlay-bg-color: rgb(0 0 0 / 50%);
 
 	/* Links and link-looking buttons */
-	--link-color: #50a656;
+	--link-color: #77abd9;
 
 	/* Background color of the main window */
 	--window-bg-color: #fff;
@@ -291,6 +291,9 @@ p {
 #player button.play::before,
 #player button.pause::before,
 #player button.volume::before,
+.inline-player button.play::before,
+.inline-player button.pause::before,
+.inline-player button.volume::before,
 #chat button.mentions::before,
 #chat button.close::before,
 #chat button.menu::before,
@@ -335,8 +338,8 @@ p {
 #chat .topic-container .save-topic span::before,
 #version-checker::before,
 .context-menu-item::before,
-#help .website-link::before,
-#help .documentation-link::before,
+.website-link::before,
+.documentation-link::before,
 #help .report-issue-link::before,
 #image-viewer .previous-image-btn::before,
 #image-viewer .next-image-btn::before,
@@ -360,6 +363,11 @@ p {
 #player button.volume-high::before { content: "\f028"; /* http://fontawesome.io/icon/volume-high/ */ }
 #player button.volume-low::before { content: "\f027"; /* http://fontawesome.io/icon/volume-low/ */ }
 #player button.volume-muted::before { content: "\f6a9"; /* http://fontawesome.io/icon/volume-xmark/ */ }
+.inline-player button.play::before { content: "\f04b"; /* http://fontawesome.io/icon/play/ */ }
+.inline-player button.pause::before { content: "\f04d"; /* http://fontawesome.io/icon/stop/ */ }
+.inline-player button.volume-high::before { content: "\f028"; /* http://fontawesome.io/icon/volume-high/ */ }
+.inline-player button.volume-low::before { content: "\f027"; /* http://fontawesome.io/icon/volume-low/ */ }
+.inline-player button.volume-muted::before { content: "\f6a9"; /* http://fontawesome.io/icon/volume-xmark/ */ }
 #chat button.menu::before { content: "\f142"; /* http://fontawesome.io/icon/ellipsis-v/ */ }
 #chat button.mentions::before { content: "\f1fa"; /* https://fontawesome.com/icons/at?style=solid */ }
 #chat button.search::before { content: "\f002"; /* https://fontawesome.com/icons/search?style=solid */ }
@@ -400,6 +408,7 @@ p {
 .channel-list-item[data-type="channel"]::before { content: "\f086"; /* http://fontawesome.io/icon/comments/ */ }
 
 .channel-list-item[data-type="special"]::before { content: "\f03a"; /* http://fontawesome.io/icon/list/ */ }
+.channel-list-item[data-type="livestream"]::before { content: "\f130"; /* http://fontawesome.io/icon/microphone/ */ }
 
 .channel-list-item.has-draft:not(.active):not([data-type="lobby"])::before {
 	content: "\f304"; /* https://fontawesome.com/icons/pen?style=solid */
@@ -407,6 +416,7 @@ p {
 
 #footer .connect::before { content: "\f067"; /* http://fontawesome.io/icon/plus/ */ }
 
+#footer .info-circle::before { content: "\f05a"; /* http://fontawesome.io/icon/info-circle/ */ }
 #footer .settings::before { content: "\f013"; /* http://fontawesome.io/icon/cog/ */ }
 
 #footer .help::before { content: "\f059"; /* http://fontawesome.io/icon/question/ */ }
@@ -420,8 +430,8 @@ p {
 	color: #7f8c8d;
 }
 
-#help .website-link::before,
-#help .documentation-link::before,
+.website-link::before,
+.documentation-link::before,
 #help .report-issue-link::before {
 	display: inline-block;
 	margin-right: 5px;
@@ -431,8 +441,8 @@ p {
 	text-align: center;
 }
 
-#help .website-link::before { content: "\f0ac"; /* http://fontawesome.io/icon/globe/ */ }
-#help .documentation-link::before { content: "\f19d"; /* http://fontawesome.io/icon/graduation-cap/ */ }
+.website-link::before { content: "\f0ac"; /* http://fontawesome.io/icon/globe/ */ }
+.documentation-link::before { content: "\f02d"; /* http://fontawesome.io/icon/book/ */ }
 #help .report-issue-link::before { content: "\f188"; /* http://fontawesome.io/icon/bug/ */ }
 
 #chat .msg[data-type="invite"] .from::before {
@@ -2952,8 +2962,95 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	align-items: center;
 }
 
+/***
+ * Troll Room
+ ***/
+
+p.lead {
+	font-size: 19px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
 #player {
 	position: sticky;
 	top: 0;
 	background-color: var(--highlight-bg-color);
+}
+
+#player .topic {
+	cursor: pointer;
+}
+
+#sidebar .logo-container {
+	margin-bottom: 8px;
+}
+
+.channel-list-item[data-type="livestream"] {
+	color: #b7c5d1;
+}
+
+a.btn:hover,
+.channel-list-item[data-type="livestream"]:hover {
+	text-decoration: none;
+}
+
+.content-logo {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+
+.content-logo img {
+	width: 100px;
+}
+
+.inline-player {
+	background-color: var(--highlight-bg-color);
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+
+.inline-player .ip-header,
+.inline-player .ip-footer {
+	align-items: center;
+	display: flex;
+	flex-shrink: 0;
+	height: 45px;
+	line-height: 45px;
+	overflow: hidden;
+	padding: 0 6px;
+}
+
+.inline-player .ip-header button,
+.inline-player .ip-footer button {
+	color: #607992;
+	display: flex;
+	flex-shrink: 0;
+	font-size: 14px;
+	height: 36px;
+	line-height: 1;
+	width: 36px;
+	transition: opacity .2s;
+}
+
+.inline-player .ip-header button::before,
+.inline-player .ip-footer button::before {
+	line-height: 36px;
+	width: 36px;
+}
+
+.inline-player .ip-header span {
+	font-weight: bold;
+	cursor: pointer;
+	flex-grow: 1;
+	flex-shrink: 99999999;
+	font-size: 14px;
+}
+
+.inline-player .ip-topic {
+	font-size: 14px;
+	line-height: 18px;
+	padding: 8px;
+	min-width: 25px;
 }

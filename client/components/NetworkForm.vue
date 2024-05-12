@@ -4,6 +4,17 @@
 		<div class="header">
 			<SidebarToggle />
 		</div>
+
+		<div class="container">
+			<div class="content-logo">
+				<img
+					src="img/trollroom-logo.svg"
+					alt="Troll Room"
+					role="presentation"
+				/>
+			</div>
+		</div>
+
 		<form class="container" method="post" action="" @submit.prevent="onSubmit">
 			<h1 class="title">
 				<template v-if="defaults.uuid">
@@ -207,12 +218,27 @@
 				</div>
 			</template>
 
+			<p>
+				The Troll Room is a public IRC server accessibly to anyone. Please note that you need register your
+				nickname before you can start trolling.
+			</p>
+
+			<p>
+				<a
+					href="http://adam.curry.com/html/HowtoregisterfortheT-22VC1Zc7QQMdBNX0nWzCbfMDwD7KZN.html"
+					target="_blank"
+					rel="noopener"
+					class="website-link"
+				>Registration Instructions</a>
+			</p>
+
 			<h2>User preferences</h2>
+
 			<div class="connect-row">
-				<label for="connect:nick">Nick</label>
+				<label for="connect:nick">Nickname</label>
 				<input
 					id="connect:nick"
-					v-model="defaults.nick"
+					v-model="trollroomNick"
 					class="input nick"
 					name="nick"
 					pattern="[^\s:!@]+"
@@ -253,7 +279,7 @@
 					autocomplete="off"
 					class="input"
 					name="leaveMessage"
-					placeholder="Troll Room - https://trollroom.io"
+					placeholder="Troll Room - https://noagenda.stream"
 				/>
 			</div>
 			-->
@@ -286,9 +312,10 @@ the server tab on new connection"
 					<label for="connect:channels">Channels</label>
 					<input
 						id="connect:channels"
-						v-model.trim="defaults.join"
+						v-model.trim="trollroomJoin"
 						class="input"
 						name="join"
+						@input="onJoinChanged"
 					/>
 				</div>
 			</template>
@@ -313,12 +340,13 @@ the server tab on new connection"
 							<input
 								id="connect:password"
 								ref="publicPassword"
-								v-model="defaults.password"
+								v-model="trollroomPassword"
 								class="input"
 								:type="slotProps.isVisible ? 'text' : 'password'"
 								placeholder="Server password (optional)"
 								name="password"
 								maxlength="300"
+								@input="onPasswordChanged"
 							/>
 						</RevealPassword>
 					</div>
@@ -473,6 +501,9 @@ export default defineComponent({
 	setup(props) {
 		const store = useStore();
 		const config = ref(store.state.serverConfiguration);
+		const trollroomNick = ref(localStorage.getItem('trollroom-nick') ?? props.defaults?.nick);
+		const trollroomJoin = ref(localStorage.getItem('trollroom-join') ?? props.defaults?.join);
+		const trollroomPassword = ref(localStorage.getItem('trollroom-password') ?? props.defaults?.password);
 		const previousUsername = ref(props.defaults?.username);
 		const displayPasswordField = ref(false);
 
@@ -536,6 +567,12 @@ export default defineComponent({
 		const usernameInput = ref<HTMLInputElement | null>(null);
 
 		const onNickChanged = (event: Event) => {
+			const nick = (event.target as HTMLInputElement)?.value;
+
+			if (nick && nick.substring(0, 5) !== 'Troll' && nick.length !== 8) {
+				localStorage.setItem('trollroom-nick', nick);
+			}
+
 			if (!usernameInput.value) {
 				return;
 			}
@@ -547,6 +584,22 @@ export default defineComponent({
 			}
 
 			previousUsername.value = (event.target as HTMLInputElement)?.value;
+		};
+
+		const onJoinChanged = (event: Event) => {
+			const join = (event.target as HTMLInputElement)?.value;
+
+			if (join) {
+				localStorage.setItem('trollroom-join', join);
+			}
+		};
+
+		const onPasswordChanged = (event: Event) => {
+			const password = (event.target as HTMLInputElement)?.value;
+
+			if (password) {
+				localStorage.setItem('trollroom-password', password);
+			}
 		};
 
 		const onSubmit = (event: Event) => {
@@ -570,7 +623,12 @@ export default defineComponent({
 			setSaslAuth,
 			usernameInput,
 			onNickChanged,
+			onJoinChanged,
+			onPasswordChanged,
 			onSubmit,
+			trollroomNick,
+			trollroomJoin,
+			trollroomPassword,
 		};
 	},
 });

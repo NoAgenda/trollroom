@@ -8,6 +8,8 @@ import Help from "../components/Windows/Help.vue";
 import Changelog from "../components/Windows/Changelog.vue";
 import NetworkEdit from "../components/Windows/NetworkEdit.vue";
 import SearchResults from "../components/Windows/SearchResults.vue";
+import Livestream from "../components/Windows/Livestream.vue";
+import Information from '../components/Windows/Information.vue';
 import RoutedChat from "../components/RoutedChat.vue";
 import {store} from "./store";
 
@@ -39,6 +41,11 @@ const router = createRouter({
 			path: "/connect",
 			component: Connect,
 			props: (route) => ({queryParams: route.query}),
+		},
+		{
+			name: "Information",
+			path: "/information",
+			component: Information,
 		},
 		{
 			path: "/settings",
@@ -91,6 +98,11 @@ const router = createRouter({
 			name: "SearchResults",
 			path: "/chan-:id/search",
 			component: SearchResults,
+		},
+		{
+			name: "Livestream",
+			path: "/livestream",
+			component: Livestream,
 		},
 	],
 });
