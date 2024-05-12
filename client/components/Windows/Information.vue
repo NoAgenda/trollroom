@@ -13,7 +13,7 @@
 
 			<div class="about">
 				<p>
-					The No Agenda Show is an award-winning podcast created by <a href="https://www.noagendashow.net/adam-curry">Adam Curry</a> and <a href="https://www.noagendashow.net/john-c-dvorak">John C. Dvorak</a> in 2007. The show relies on the direct support of the producers and consumers of the show using a value-for-value model.
+					The No Agenda Show is an award-winning podcast created by <a href="https://www.noagendashow.net/adam-curry" target="_blank">Adam Curry</a> and <a href="https://www.noagendashow.net/john-c-dvorak" target="_blank">John C. Dvorak</a>. The show relies on the direct support of the producers and consumers of the show using a <a href="https://value4value.info" target="_blank">value-for-value</a> model.
 				</p>
 
 				<p>
@@ -40,7 +40,7 @@
 					target="_blank"
 					rel="noopener"
 					class="website-link"
-				>Programming Schedule</a>
+				>Stream Playlist</a>
 			</p>
 
 			<p>

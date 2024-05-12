@@ -196,7 +196,7 @@ module.exports = {
     //
     // This value is set to `"The Lounge - https://thelounge.chat"` by
     // default.
-    leaveMessage: "Troll Room - https://trollroom.io",
+    leaveMessage: "Troll Room - https://noagenda.stream",
     // ## Default network
     // ### `defaults`
     //
