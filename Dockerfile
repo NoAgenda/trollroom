@@ -12,7 +12,7 @@ ENV PORT 9000
 EXPOSE ${PORT}
 
 ENTRYPOINT ["/srv/docker-entrypoint.sh"]
-CMD ["index.js", "start"]
+CMD ["/srv/index.js", "start"]
 
 WORKDIR /srv
 COPY . /srv
