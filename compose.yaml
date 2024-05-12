@@ -1,8 +1,9 @@
 services:
     trollroom:
-        image: node
+        container_name: trollroom
+        image: ghcr.io/noagenda/trollroom:${APP_TAG:-local}
+        build: .
         working_dir: /srv
-        command: "yarn start"
         ports:
             - "9000:9000"
         volumes:
