@@ -11,7 +11,7 @@
 				Add Troll Room to Home screen
 			</button>
 			<button
-				v-if="canRegisterProtocol"
+				v-if="false"
 				type="button"
 				class="btn"
 				@click.prevent="registerProtocol"

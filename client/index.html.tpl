@@ -19,28 +19,14 @@
 	<title>No Agenda Stream</title>
 
 	<!-- Browser tab icon -->
-	<link id="favicon" rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico" data-other="img/favicon-alerted.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 
-	<!-- Safari pinned tab icon -->
-	<link rel="mask-icon" href="img/icon-black-transparent-bg.svg" color="#415364">
+	<link rel="manifest" href="trollroom.webmanifest">
 
-	<link rel="manifest" href="thelounge.webmanifest">
-
-	<!-- iPhone 4, iPhone 4s, iPhone 5, iPhone 5c, iPhone 5s, iPhone 6, iPhone 6s, iPhone 7, iPhone 7s, iPhone8 -->
-	<link rel="apple-touch-icon" sizes="120x120" href="img/logo-grey-bg-120x120px.png">
-	<!-- iPad and iPad mini @2x -->
-	<link rel="apple-touch-icon" sizes="152x152" href="img/logo-grey-bg-152x152px.png">
-	<!-- iPad Pro -->
-	<link rel="apple-touch-icon" sizes="167x167" href="img/logo-grey-bg-167x167px.png">
-	<!-- iPhone X, iPhone 8 Plus, iPhone 7 Plus, iPhone 6s Plus, iPhone 6 Plus -->
-	<link rel="apple-touch-icon" sizes="180x180" href="img/logo-grey-bg-180x180px.png">
-
-	<!-- Windows 8/10 - Edge tiles -->
 	<meta name="application-name" content="No Agenda Stream">
-	<meta name="msapplication-TileColor" content="<%- themeColor %>">
-	<meta name="msapplication-square70x70logo" content="img/logo-grey-bg-120x120px.png">
-	<meta name="msapplication-square150x150logo" content="img/logo-grey-bg-152x152px.png">
-
+	<meta name="apple-mobile-web-app-title" content="NA Stream">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="mobile-web-app-capable" content="yes">

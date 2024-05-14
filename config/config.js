@@ -243,10 +243,10 @@ module.exports = {
     defaults: {
         name: "Troll Room",
         host: "irc.zeronode.net",
-        port: 6667,
+        port: 6697,
         password: "",
-        tls: false,
-        rejectUnauthorized: true,
+        tls: true,
+        rejectUnauthorized: false,
         nick: "Troll%%%",
         username: "Anonymous Troll",
         realname: "",
@@ -338,7 +338,9 @@ module.exports = {
     //   ```
     //
     // This value is set to `null` to disable WEBIRC by default.
-    webirc: null,
+    webirc: process.env.WEBIRC_PASSWORD ? {
+		"irc.zeronode.net": process.env.WEBIRC_PASSWORD,
+	} : null,
     // ## identd and oidentd support
     // ### `identd`
     //

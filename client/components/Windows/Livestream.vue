@@ -40,7 +40,7 @@
 
 			<p>
 				<a
-					href="https://www.noagendadonatins.com"
+					href="https://www.noagendadonations.com"
 					target="_blank"
 					rel="noopener"
 					class="website-link"

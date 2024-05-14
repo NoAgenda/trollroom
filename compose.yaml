@@ -4,8 +4,11 @@ services:
         image: ghcr.io/noagenda/trollroom:${APP_TAG:-local}
         build: .
         working_dir: /srv
+        environment:
+            NODE_ENV: production
+        env_file:
+            - .env
         ports:
             - "9000:9000"
         volumes:
-            - "./config:/root/.thelounge"
             - "./:/srv"

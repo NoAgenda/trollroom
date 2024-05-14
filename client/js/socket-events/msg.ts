@@ -174,8 +174,8 @@ function notifyMessage(
 					} else {
 						const notify = new Notification(title, {
 							tag: `chan-${targetId}`,
-							badge: "img/icon-alerted-black-transparent-bg-72x72px.png",
-							icon: "img/icon-alerted-grey-bg-192x192px.png",
+							badge: "img/trollroom-logo.png",
+							icon: "img/trollroom-logo.png",
 							body: body,
 							timestamp: timestamp,
 						});

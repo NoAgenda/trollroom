@@ -33,7 +33,7 @@ function handleDisconnect(data) {
 	if (!socket.io.reconnection()) {
 		store.commit(
 			"currentUserVisibleError",
-			`Disconnected from the server (${message}), The Lounge does not reconnect in public mode.`
+			`Disconnected from the Troll Room (${message}), reload the page to continue.`
 		);
 		updateLoadingMessage();
 		return;
