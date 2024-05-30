@@ -19,7 +19,7 @@ ENV NODE_ENV production
 ENV THELOUNGE_HOME "/srv/config"
 
 CMD ["/srv/index.js", "start"]
-ENTRYPOINT ["sh"]
+ENTRYPOINT ["node"]
 EXPOSE 9000
 USER node
 WORKDIR /srv
