@@ -43,7 +43,7 @@ module.exports = {
     // and will honor the `X-Forwarded-For` header.
     //
     // This value is set to `false` by default.
-    reverseProxy: false,
+    reverseProxy: true,
     // ### `maxHistory`
     //
     // Defines the maximum number of history lines that will be kept in memory per
