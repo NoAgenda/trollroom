@@ -98,18 +98,19 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from "vue";
-import dayjs from "dayjs";
+import {computed, defineComponent, PropType} from 'vue';
+import dayjs from 'dayjs';
 
-import constants from "../js/constants";
-import localetime from "../js/helpers/localetime";
-import Username from "./Username.vue";
-import LinkPreview from "./LinkPreview.vue";
-import ParsedMessage from "./ParsedMessage.vue";
-import MessageTypes from "./MessageTypes";
+import constants from '../js/constants';
+import localetime from '../js/helpers/localetime';
+import Username from './Username.vue';
+import LinkPreview from './LinkPreview.vue';
+import ParsedMessage from './ParsedMessage.vue';
+import MessageTypes from './MessageTypes';
 
-import type {ClientChan, ClientMessage, ClientNetwork} from "../js/types";
-import {useStore} from "../js/store";
+import type {ClientChan, ClientMessage, ClientNetwork} from '../js/types';
+import {useStore} from '../js/store';
+import {MessageType} from '../../shared/types/msg';
 
 MessageTypes.ParsedMessage = ParsedMessage;
 MessageTypes.LinkPreview = LinkPreview;
@@ -128,6 +129,13 @@ export default defineComponent({
 	},
 	setup(props) {
 		const store = useStore();
+
+		const isNotice = props.message.type === MessageType.NOTICE;
+		const messageText = props.message.text;
+
+		if (isNotice && messageText && messageText.includes('Found your hostname') && messageText.includes('.noagenda.ovh')) {
+			props.message.text = 'Found Troll Room Relay';
+		}
 
 		const timeFormat = computed(() => {
 			let format: keyof typeof constants.timeFormats;
