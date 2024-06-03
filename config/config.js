@@ -246,7 +246,7 @@ module.exports = {
         port: 6697,
         password: "",
         tls: true,
-        rejectUnauthorized: false,
+        rejectUnauthorized: true,
         nick: "Troll%%%",
         username: "Anonymous Troll",
         realname: "",
