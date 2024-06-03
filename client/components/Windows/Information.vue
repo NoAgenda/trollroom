@@ -83,6 +83,11 @@
 				<p>
 					<router-link to="/help" class="documentation-link">Controls</router-link>
 				</p>
+
+				<p>
+					<router-link v-if="store.state.networks.length === 0" to="/connect" class="btn">Connect to the Troll Room</router-link>
+					<router-link v-else to="/chan-2" class="btn">Return to the troll room</router-link>
+				</p>
 			</div>
 
 			<h2 class="help-version-title">

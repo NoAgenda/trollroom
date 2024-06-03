@@ -2972,6 +2972,10 @@ p.lead {
 	margin-bottom: 16px;
 }
 
+#loading {
+	visibility: hidden;
+}
+
 #player {
 	position: sticky;
 	top: 0;
@@ -3053,4 +3057,9 @@ a.btn:hover,
 	line-height: 18px;
 	padding: 8px;
 	min-width: 25px;
+}
+
+.inline-player audio {
+	width: 100%;
+	padding: 0 6px 6px 6px;
 }

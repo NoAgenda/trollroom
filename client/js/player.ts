@@ -117,8 +117,19 @@ class Player {
 		fetch('https://listen.noagendastream.com/status-json.xsl')
 			.then(response => response.json())
 			.then(response => {
-				this.title = response.icestats.source[0].title;
-				this.musicTitle = response.icestats.source[1].title;
+				const sources = response?.icestats?.source;
+
+				if (!(sources instanceof Array)) {
+					throw new Error();
+				}
+
+				for (const source of sources) {
+					if (source.server_name === 'No Agenda Stream') {
+						this.title = source.title;
+					} else if (source.server_name === 'No Agenda Stream v4v Music') {
+						this.musicTitle = source.title;
+					}
+				}
 
 				if (!this.loading) {
 					this.dispatchMediaEvent('update');

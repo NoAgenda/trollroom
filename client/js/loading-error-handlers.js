@@ -8,6 +8,18 @@
  */
 
 (function () {
+	const noJsContainer = document.getElementById("nojs");
+
+	if (noJsContainer) {
+		noJsContainer.remove();
+	}
+
+	const loadingContainer = document.getElementById("loading");
+
+	if (loadingContainer) {
+		loadingContainer.style.visibility = "visible";
+	}
+
 	const msg = document.getElementById("loading-page-message");
 
 	if (msg) {

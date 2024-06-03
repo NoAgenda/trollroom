@@ -134,7 +134,7 @@ export default defineComponent({
 		const messageText = props.message.text;
 
 		if (isNotice && messageText && messageText.includes('Found your hostname') && messageText.includes('.noagenda.ovh')) {
-			props.message.text = 'Found Troll Room Relay';
+			props.message.text = '*** Found Troll Room Relay';
 		}
 
 		const timeFormat = computed(() => {
