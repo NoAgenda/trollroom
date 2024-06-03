@@ -436,6 +436,12 @@ the server tab on new connection"
 					<template v-else>Connect</template>
 				</button>
 			</div>
+
+			<div>
+				<button type="button" class="btn" @click="resetToDefaults">
+					Reset to defaults
+				</button>
+			</div>
 		</form>
 	</div>
 </template>
@@ -501,11 +507,21 @@ export default defineComponent({
 	setup(props) {
 		const store = useStore();
 		const config = ref(store.state.serverConfiguration);
-		const trollroomNick = ref(localStorage.getItem('trollroom-nick') ?? props.defaults?.nick);
-		const trollroomJoin = ref(localStorage.getItem('trollroom-join') ?? props.defaults?.join);
-		const trollroomPassword = ref(localStorage.getItem('trollroom-password') ?? props.defaults?.password);
+		const trollroomNick = ref(window.localStorage.getItem('trollroom-nick') ?? props.defaults?.nick);
+		const trollroomJoin = ref(window.localStorage.getItem('trollroom-join') ?? props.defaults?.join);
+		const trollroomPassword = ref(window.localStorage.getItem('trollroom-password') ?? '');
 		const previousUsername = ref(props.defaults?.username);
 		const displayPasswordField = ref(false);
+
+		const resetToDefaults = () => {
+			window.localStorage.removeItem('trollroom-nick');
+			window.localStorage.removeItem('trollroom-join');
+			window.localStorage.removeItem('trollroom-password');
+
+			trollroomNick.value = props.defaults?.nick;
+			trollroomJoin.value = props.defaults?.join;
+			trollroomPassword.value = '';
+		};
 
 		const publicPassword = ref<HTMLInputElement | null>(null);
 
@@ -629,6 +645,7 @@ export default defineComponent({
 			trollroomNick,
 			trollroomJoin,
 			trollroomPassword,
+			resetToDefaults,
 		};
 	},
 });

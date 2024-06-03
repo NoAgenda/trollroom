@@ -3,6 +3,8 @@ services:
         container_name: trollroom
         image: ghcr.io/noagenda/trollroom:${APP_TAG:-local}
         build: .
+        environment:
+            NODE_ENV: development
         ports:
             - "9000:9000"
         volumes:

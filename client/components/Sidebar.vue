@@ -3,13 +3,13 @@
 		<div class="scrollable-area">
 			<div class="logo-container">
 				<img
-					src="img/trollroom-logo.svg"
+					src="/img/trollroom-logo.svg"
 					class="logo"
 					alt="Troll Room"
 					role="presentation"
 				/>
 				<img
-					src="img/trollroom-logo.svg"
+					src="/img/trollroom-logo.svg"
 					class="logo-inverted"
 					alt="Troll Room"
 					role="presentation"
@@ -29,11 +29,11 @@
 				>
 			</div>
 
-			<a href="#/livestream" class="channel-list-item" aria-label="Livestream" title="Livestream" data-name="Livestream" data-type="livestream">
+			<router-link to="/livestream" class="channel-list-item" aria-label="Livestream" title="Livestream" data-name="Livestream" data-type="livestream">
 				<div class="lobby-wrap">
 					<span title="Livestream" class="name">Livestream</span>
 				</div>
-			</a>
+			</router-link>
 
 			<NetworkList />
 		</div>

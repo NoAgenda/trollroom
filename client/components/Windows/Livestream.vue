@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="content-logo">
 				<img
-					src="img/trollroom-logo.svg"
+					src="/img/trollroom-logo.svg"
 					alt="Troll Room"
 					role="presentation"
 				/>
@@ -18,10 +18,7 @@
 			<p class="lead">Welcome to the stream that's all talk, no commercials. No Agenda.</p>
 
 			<p>
-				<a
-					href="#/information"
-					class="documentation-link"
-				>Learn more</a>
+				<router-link to="/information" class="documentation-link">Learn more</router-link>
 			</p>
 
 			<InlinePlayer />
@@ -49,14 +46,11 @@
 
 			<h2>Troll Room</h2>
 
-			<a v-if="store.state.networks.length === 0" href="#/connect" class="btn">Connect to the Troll Room</a>
-			<a v-else href="#/chan-2" class="btn">Return to the troll room</a>
+			<router-link v-if="store.state.networks.length === 0" to="/connect" class="btn">Connect to the Troll Room</router-link>
+			<router-link v-else to="/chan-2" class="btn">Return to the troll room</router-link>
 
 			<p>
-				<a
-					href="#/information"
-					class="documentation-link"
-				>Learn more</a>
+				<router-link to="/information" class="documentation-link">Learn more</router-link>
 			</p>
 		</div>
 	</div>

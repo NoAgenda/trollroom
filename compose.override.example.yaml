@@ -1,5 +1,0 @@
-services:
-    trollroom:
-        environment:
-            NODE_ENV: development
-            WEBIRC_PASSWORD: lookoverthere

@@ -81,10 +81,7 @@
 				</p>
 
 				<p>
-					<a
-						href="#/help"
-						class="documentation-link"
-					>Controls</a>
+					<router-link to="/help" class="documentation-link">Controls</router-link>
 				</p>
 			</div>
 
@@ -94,7 +91,7 @@
 
 			<div class="about">
 				<p>
-					The No Agenda Stream and the Troll Room are provided by <a href="https://podcastindex.social/@voidzero">voidzero</a>.<br>
+					The No Agenda Stream and the Troll Room are provided by <a href="https://noagenda.ninja">voidzero</a>.<br>
 					The programming of the streams is managed by <a href="https://noauthority.social/@SirBemrose">Sir Bemrose</a>.<br>
 					noagenda.stream was created by <a href="https://www.codedmonkey.com">Coded Monkey</a>.
 				</p>
@@ -104,7 +101,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from "vue";
+import {defineComponent} from "vue";
 import {useStore} from "../../js/store";
 import Player from "../Player.vue";
 import SidebarToggle from "../SidebarToggle.vue";

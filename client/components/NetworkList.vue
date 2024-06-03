@@ -5,7 +5,8 @@
 		role="navigation"
 		aria-label="Network and Channel list"
 	>
-		You are not connected to the Troll Room.
+		You are not connected to the Troll Room.<br>
+		<router-link to="/connect">Connect Now</router-link>
 	</div>
 	<div v-else ref="networklist" role="navigation" aria-label="Network and Channel list">
 		<div class="jump-to-input" v-if="false">
