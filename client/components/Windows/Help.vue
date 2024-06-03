@@ -22,7 +22,7 @@
 
 			<p>
 				<a
-					href="https://phoneboy.com/trollroom"
+					href="https://www.noagendashow.net/about/troll-room"
 					target="_blank"
 					rel="noopener"
 					class="website-link"
@@ -31,7 +31,7 @@
 
 			<p>
 				<a
-					href="http://adam.curry.com/html/HowtoregisterfortheT-22VC1Zc7QQMdBNX0nWzCbfMDwD7KZN.html"
+					href="https://www.noagendashow.net/about/troll-room-registration"
 					target="_blank"
 					rel="noopener"
 					class="website-link"

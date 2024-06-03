@@ -64,7 +64,7 @@
 
 				<p>
 					<a
-						href="https://phoneboy.com/trollroom"
+						href="https://www.noagendashow.net/about/troll-room"
 						target="_blank"
 						rel="noopener"
 						class="website-link"
@@ -73,7 +73,7 @@
 
 				<p>
 					<a
-						href="http://adam.curry.com/html/HowtoregisterfortheT-22VC1Zc7QQMdBNX0nWzCbfMDwD7KZN.html"
+						href="https://www.noagendashow.net/about/troll-room-registration"
 						target="_blank"
 						rel="noopener"
 						class="website-link"
@@ -97,7 +97,7 @@
 			<div class="about">
 				<p>
 					The No Agenda Stream and the Troll Room are provided by <a href="https://noagenda.ninja">voidzero</a>.<br>
-					The programming of the streams is managed by <a href="https://noauthority.social/@SirBemrose">Sir Bemrose</a>.<br>
+					The programming of the streams is managed by <a href="https://bemrose.social/ryan">Sir Bemrose</a>.<br>
 					noagenda.stream was created by <a href="https://www.codedmonkey.com">Coded Monkey</a>.
 				</p>
 			</div>

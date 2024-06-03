@@ -124,10 +124,12 @@ class Player {
 				}
 
 				for (const source of sources) {
+					const title = source.title ?? source.server_name;
+
 					if (source.server_name === 'No Agenda Stream') {
-						this.title = source.title;
+						this.title = title;
 					} else if (source.server_name === 'No Agenda Stream v4v Music') {
-						this.musicTitle = source.title;
+						this.musicTitle = title;
 					}
 				}
 
