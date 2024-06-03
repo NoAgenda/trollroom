@@ -9,3 +9,4 @@ public/
 dist/
 
 /compose.override.yaml
+/config/vapid.json
