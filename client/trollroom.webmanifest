@@ -1,6 +1,6 @@
 {
-	"name": "No Agenda Stream",
-	"short_name": "NA Stream",
+	"name": "Troll Room",
+	"short_name": "Troll Room",
 	"description": "The official No Agenda Stream & Troll Room",
 	"start_url": ".",
 	"display": "standalone",

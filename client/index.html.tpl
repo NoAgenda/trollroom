@@ -25,8 +25,8 @@
 
 	<link rel="manifest" href="trollroom.webmanifest">
 
-	<meta name="application-name" content="No Agenda Stream">
-	<meta name="apple-mobile-web-app-title" content="NA Stream">
+	<meta name="application-name" content="Troll Room">
+	<meta name="apple-mobile-web-app-title" content="Troll Room">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="mobile-web-app-capable" content="yes">
