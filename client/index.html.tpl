@@ -52,13 +52,13 @@
 						<div class="ip-header">
 							<span>No Agenda Stream</span>
 						</div>
-						<audio src="http://listen.noagendastream.com/noagenda.m3u" preload="none" controls></audio>
+						<audio src="http://listen.noagendastream.com/noagenda?type=.mp3" preload="none" controls></audio>
 					</div>
 					<div class="inline-player">
 						<div class="ip-header">
 							<span>No Agenda Stream v4v Music</span>
 						</div>
-						<audio src="http://listen.noagendastream.com/v4vmusic.m3u" preload="none" controls></audio>
+						<audio src="http://listen.noagendastream.com/v4vmusic?type=.mp3" preload="none" controls></audio>
 					</div>
 					<p>No Agenda Stream is part of the No Agenda network.</p>
 					<p>
