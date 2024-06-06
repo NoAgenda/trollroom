@@ -16,7 +16,7 @@
 	<% }); %>
 	<style id="user-specified-css"></style>
 
-	<title>No Agenda Stream</title>
+	<title>Troll Room</title>
 
 	<!-- Browser tab icon -->
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
