@@ -105,7 +105,7 @@ export default defineComponent({
 		NetworkList,
 	},
 	props: {
-		overlay: {type: Object as PropType<HTMLElement | null>, required: true},
+		overlay: {type: Object as PropType<HTMLElement | null>, required: false},
 	},
 	setup(props) {
 		const isDevelopment = process.env.NODE_ENV !== "production";

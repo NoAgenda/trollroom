@@ -14,6 +14,12 @@
 		noJsContainer.remove();
 	}
 
+	const subscriptions = [];
+
+	window.g_TrollRoomHandleError = (subscription) => {
+		subscriptions.push(subscription);
+	};
+
 	const loadingContainer = document.getElementById("loading");
 
 	if (loadingContainer) {
@@ -70,6 +76,8 @@
 		details.appendChild(data);
 		details.appendChild(info);
 		msg.parentNode?.insertBefore(details, msg.nextSibling);
+
+		subscriptions.map((subscription) => subscription(e.message));
 
 		window.clearTimeout(loadingSlowTimeout);
 		displayReload();

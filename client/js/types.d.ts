@@ -9,6 +9,7 @@ import {LinkPreview, SharedMsg} from "../../shared/types/msg";
 
 interface LoungeWindow extends Window {
 	g_TheLoungeRemoveLoading?: () => void;
+	g_TrollRoomHandleError?: (subscription: (message: string) => void) => void;
 	navigator: Window["navigator"] & {
 		setAppBadge?: (highlightCount: number) => void;
 		clearAppBadge?: () => void;

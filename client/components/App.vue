@@ -1,6 +1,6 @@
 <template>
 	<div id="viewport" :class="viewportClasses" role="tablist">
-		<Sidebar v-if="store.state.appLoaded" :overlay="overlay" />
+		<Sidebar />
 		<div
 			id="sidebar-overlay"
 			ref="overlay"
@@ -41,6 +41,7 @@ import {
 } from "vue";
 import {useStore} from "../js/store";
 import type {DebouncedFunc} from "lodash";
+import {navigate} from "../js/router";
 
 export const imageViewerKey = Symbol() as InjectionKey<Ref<typeof ImageViewer | null>>;
 const contextMenuKey = Symbol() as InjectionKey<Ref<typeof ContextMenu | null>>;
@@ -67,10 +68,16 @@ export default defineComponent({
 		provide(contextMenuKey, contextMenu);
 		provide(confirmDialogKey, confirmDialog);
 
+		// Since sign in redirect is disabled for the Troll Room
+		// add a custom redirect on initial load here
+		onMounted(() => {
+			void navigate("Livestream");
+		});
+
 		const viewportClasses = computed(() => {
 			return {
 				notified: store.getters.highlightCount > 0,
-				"menu-open": store.state.appLoaded && store.state.sidebarOpen,
+				"menu-open": store.state.sidebarOpen,
 				"menu-dragging": store.state.sidebarDragging,
 				"userlist-open": store.state.userlistOpen,
 			};

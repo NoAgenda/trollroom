@@ -81,20 +81,6 @@
 			</div>
 		</div>
 
-		<div id="loading">
-			<div class="window">
-				<div id="loading-status-container">
-					<img src="img/trollroom-logo.svg" class="logo" alt="" width="256" height="256">
-					<img src="img/trollroom-logo.svg" class="logo-inverted" alt="" width="256" height="256">
-					<p id="loading-page-message">No Agenda Stream requires a modern browser with JavaScript enabled.</p>
-				</div>
-				<div id="loading-reload-container">
-					<p id="loading-slow">This is taking longer than it should, there might be connectivity issues.</p>
-					<button id="loading-reload" class="btn">Reload page</button>
-				</div>
-			</div>
-		</div>
-
 		<script src="js/loading-error-handlers.js?v=<%- cacheBust %>"></script>
 		<script src="js/bundle.vendor.js?v=<%- cacheBust %>"></script>
 		<script src="js/bundle.js?v=<%- cacheBust %>"></script>

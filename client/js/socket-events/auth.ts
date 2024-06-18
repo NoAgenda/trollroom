@@ -8,6 +8,7 @@ let lastServerHash: number | null = null;
 declare global {
 	interface Window {
 		g_TheLoungeRemoveLoading?: () => void;
+		g_TrollRoomHandleError?: (subscription: (message: string) => void) => void;
 	}
 }
 
@@ -85,7 +86,8 @@ async function showSignIn() {
 	}
 
 	if (router.currentRoute.value.name !== "SignIn") {
-		await navigate("SignIn");
+		// Disabled for Troll Room, no sign in (for The Lounge) required
+		// await navigate("SignIn");
 	}
 }
 

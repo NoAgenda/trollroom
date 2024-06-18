@@ -23,6 +23,16 @@ const router = createRouter({
 	history: createWebHashHistory(),
 	routes: [
 		{
+			name: "Livestream",
+			path: "/livestream",
+			component: Livestream,
+		},
+		{
+			name: "Information",
+			path: "/information",
+			component: Information,
+		},
+		{
 			name: "SignIn",
 			path: "/sign-in",
 			component: SignIn,
@@ -41,11 +51,6 @@ const router = createRouter({
 			path: "/connect",
 			component: Connect,
 			props: (route) => ({queryParams: route.query}),
-		},
-		{
-			name: "Information",
-			path: "/information",
-			component: Information,
 		},
 		{
 			path: "/settings",
@@ -99,15 +104,15 @@ const router = createRouter({
 			path: "/chan-:id/search",
 			component: SearchResults,
 		},
-		{
-			name: "Livestream",
-			path: "/livestream",
-			component: Livestream,
-		},
 	],
 });
 
 router.beforeEach((to, from, next) => {
+	// Disabled for the Troll Room
+	next();
+
+	return;
+
 	// If user is not yet signed in, wait for appLoaded state to change
 	// unless they are trying to open SignIn (which can be triggered in auth.js)
 	if (!store.state.appLoaded && to.name !== "SignIn") {

@@ -21,40 +21,8 @@ socket.on("init", async function (data) {
 
 		socket.emit("setting:get");
 
-		try {
-			await router.isReady();
-		} catch (e: any) {
-			// if the router throws an error, it means the route isn't matched,
-			// so we can continue on.
-		}
-
-		if (window.g_TheLoungeRemoveLoading) {
-			window.g_TheLoungeRemoveLoading();
-		}
-
-		await router.push({name: "Livestream"});
-
-		if (await handleQueryParams()) {
-			// If we handled query parameters like irc:// links or just general
-			// connect parameters in public mode, then nothing to do here
-			return;
-		}
-
-		// If we are on an unknown route or still on SignIn component
-		// then we can open last known channel on server, or Connect window if none
-		if (!router.currentRoute?.value?.name || router.currentRoute?.value?.name === "SignIn") {
-			const channel = store.getters.findChannel(data.active);
-
-			if (channel) {
-				switchToChannel(channel.channel);
-			} else if (store.state.networks.length > 0) {
-				// Server is telling us to open a channel that does not exist
-				// For example, it can be unset if you first open the page after server start
-				switchToChannel(store.state.networks[0].channels[0]);
-			} else {
-				await navigate("Connect");
-			}
-		}
+		// This part of the code was removed for the Troll Room
+		// The connection is now checked in the Connect window
 	}
 });
 
