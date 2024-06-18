@@ -26,7 +26,7 @@
 				the page.
 			</p>
 			<p>
-				If this message persists, try contacting one of our resident Dudes named Ben:
+				If this message persists, try contacting one of our resident Dudes named Ben,
 				<a href="https://noauthority.social/@woodstock" target="_blank">Coded Monkey</a> or
 				<a href="https://podcastindex.social/@voidzero" target="_blank">voidzero</a>.
 			</p>
