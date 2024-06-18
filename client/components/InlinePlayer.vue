@@ -16,6 +16,7 @@
 			<span @click="togglePlaying">
 				{{ title }}
 			</span>
+			<a :href="streamUrl" class="newtab" title="Open stream in new tab" target="_blank"></a>
 		</div>
 		<div class="ip-topic">{{ currentlyPlaying }}</div>
 		<div v-if="playing" class="ip-footer">
@@ -41,6 +42,7 @@ export default defineComponent({
 	setup(props) {
 		const playing = ref(Player.playing && props.music === Player.music);
 		const title = props.music ? "No Agenda Stream v4v Music" : "No Agenda Stream";
+		const streamUrl = props.music ? "https://listen.noagendastream.com/v4vmusic?type=.mp3" : "https://listen.noagendastream.com/noagenda?type=.mp3";
 		const currentlyPlaying = ref(props.music ? Player.musicTitle : Player.title);
 		const volume = ref(100);
 
@@ -68,6 +70,7 @@ export default defineComponent({
 			play,
 			playing,
 			pause,
+			streamUrl,
 			title,
 			togglePlaying,
 			volume,

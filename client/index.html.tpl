@@ -51,12 +51,14 @@
 					<div class="inline-player">
 						<div class="ip-header">
 							<span>No Agenda Stream</span>
+							<a href="https://listen.noagendastream.com/noagenda?type=.mp3" class="newtab" title="Open stream in new tab" target="_blank"></a>
 						</div>
 						<audio src="https://listen.noagendastream.com/noagenda?type=.mp3" preload="none" controls></audio>
 					</div>
 					<div class="inline-player">
 						<div class="ip-header">
 							<span>No Agenda Stream v4v Music</span>
+							<a href="https://listen.noagendastream.com/v4vmusic?type=.mp3" class="newtab" title="Open stream in new tab" target="_blank"></a>
 						</div>
 						<audio src="https://listen.noagendastream.com/v4vmusic?type=.mp3" preload="none" controls></audio>
 					</div>

@@ -291,6 +291,7 @@ p {
 #player button.play::before,
 #player button.pause::before,
 #player button.volume::before,
+.inline-player a.newtab::before,
 .inline-player button.play::before,
 .inline-player button.pause::before,
 .inline-player button.volume::before,
@@ -363,6 +364,7 @@ p {
 #player button.volume-high::before { content: "\f028"; /* http://fontawesome.io/icon/volume-high/ */ }
 #player button.volume-low::before { content: "\f027"; /* http://fontawesome.io/icon/volume-low/ */ }
 #player button.volume-muted::before { content: "\f6a9"; /* http://fontawesome.io/icon/volume-xmark/ */ }
+.inline-player a.newtab::before { content: "\f35d"; /* http://fontawesome.io/icon/external-link-alt/ */ }
 .inline-player button.play::before { content: "\f04b"; /* http://fontawesome.io/icon/play/ */ }
 .inline-player button.pause::before { content: "\f04d"; /* http://fontawesome.io/icon/stop/ */ }
 .inline-player button.volume-high::before { content: "\f028"; /* http://fontawesome.io/icon/volume-high/ */ }
@@ -3026,6 +3028,7 @@ a.btn:hover,
 	padding: 0 6px;
 }
 
+.inline-player .ip-header a,
 .inline-player .ip-header button,
 .inline-player .ip-footer button {
 	color: #607992;
@@ -3038,10 +3041,12 @@ a.btn:hover,
 	transition: opacity .2s;
 }
 
+.inline-player .ip-header a::before,
 .inline-player .ip-header button::before,
 .inline-player .ip-footer button::before {
 	line-height: 36px;
 	width: 36px;
+	text-align: center;
 }
 
 .inline-player .ip-header span {
