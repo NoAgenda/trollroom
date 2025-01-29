@@ -97,7 +97,7 @@
 			<div class="about">
 				<p>
 					The No Agenda Stream and the Troll Room are provided by <a href="https://noagenda.ninja" target="_blank">voidzero</a>.<br>
-					The programming of the streams is managed by <a href="https://bemrose.social/ryan" target="_blank">Sir Bemrose</a>.<br>
+					The programming of the streams is managed by <a href="https://bemrose.social/ryan" target="_blank">Sir Bemrose</a> and <a href="https://getalby.com/p/cottongintonic" target="_blank">cottongin</a>.<br>
 					noagenda.stream was created by <a href="https://www.codedmonkey.com" target="_blank">Coded Monkey</a>.
 				</p>
 			</div>
