@@ -486,6 +486,8 @@ export type NetworkFormDefaults = Partial<ClientNetwork> & {
 	join?: string;
 };
 
+const defaultChannel = '#NoAgenda';
+
 export default defineComponent({
 	name: "NetworkForm",
 	components: {
@@ -508,10 +510,16 @@ export default defineComponent({
 		const store = useStore();
 		const config = ref(store.state.serverConfiguration);
 		const trollroomNick = ref(window.localStorage.getItem('trollroom-nick') ?? props.defaults?.nick);
-		const trollroomJoin = ref(window.localStorage.getItem('trollroom-join') ?? props.defaults?.join);
+		const trollroomJoin = ref(window.localStorage.getItem('trollroom-join') ?? defaultChannel);
 		const trollroomPassword = ref(window.localStorage.getItem('trollroom-password') ?? '');
 		const previousUsername = ref(props.defaults?.username);
 		const displayPasswordField = ref(false);
+
+		// Inherit join channels from params, but always join default channel(s).
+		const join = props.defaults?.join;
+		if (typeof join === 'string' && join.toLowerCase() !== defaultChannel.toLowerCase()) {
+			trollroomJoin.value = trollroomJoin.value + ',' + join;
+		}
 
 		const resetToDefaults = () => {
 			window.localStorage.removeItem('trollroom-nick');
@@ -519,7 +527,7 @@ export default defineComponent({
 			window.localStorage.removeItem('trollroom-password');
 
 			trollroomNick.value = props.defaults?.nick;
-			trollroomJoin.value = props.defaults?.join;
+			trollroomJoin.value = defaultChannel;
 			trollroomPassword.value = '';
 		};
 

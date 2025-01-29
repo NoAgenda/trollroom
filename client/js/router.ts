@@ -108,14 +108,8 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	// Disabled for the Troll Room
-	next();
-
-	return;
-
-	// If user is not yet signed in, wait for appLoaded state to change
-	// unless they are trying to open SignIn (which can be triggered in auth.js)
-	if (!store.state.appLoaded && to.name !== "SignIn") {
+	// If the socket.io isn't connected, wait until it's connected before going to the requested path
+	if (!store.state.appLoaded && to.name !== "Livestream") {
 		store.watch(
 			(state) => state.appLoaded,
 			() => next()

@@ -21,8 +21,24 @@ socket.on("init", async function (data) {
 
 		socket.emit("setting:get");
 
-		// This part of the code was removed for the Troll Room
-		// The connection is now checked in the Connect window
+		try {
+			await router.isReady();
+		} catch (e: any) {
+			// if the router throws an error, it means the route isn't matched,
+			// so we can continue on.
+		}
+
+		if (await handleQueryParams()) {
+			// If we handled query parameters like irc:// links or just general
+			// connect parameters in public mode, then nothing to do here
+			return;
+		}
+
+		// If we are on an unknown route, then navigate to the Livestream route
+		if (!router.currentRoute?.value?.name) {
+			await navigate("Livestream");
+		}
+
 	}
 });
 

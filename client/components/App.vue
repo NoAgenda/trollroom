@@ -68,12 +68,6 @@ export default defineComponent({
 		provide(contextMenuKey, contextMenu);
 		provide(confirmDialogKey, confirmDialog);
 
-		// Since sign in redirect is disabled for the Troll Room
-		// add a custom redirect on initial load here
-		onMounted(() => {
-			void navigate("Livestream");
-		});
-
 		const viewportClasses = computed(() => {
 			return {
 				notified: store.getters.highlightCount > 0,
