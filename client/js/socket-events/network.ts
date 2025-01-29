@@ -4,6 +4,7 @@ import {switchToChannel} from "../router";
 import {toClientChan} from "../chan";
 import {ClientNetwork} from "../types";
 import {ChanState} from "../../../shared/types/chan";
+import constants from "../constants";
 
 socket.on("network", function (data) {
 	const network: ClientNetwork = {
@@ -17,6 +18,11 @@ socket.on("network", function (data) {
 
 	// Open last channel specified in `join`
 	switchToChannel(network.channels[network.channels.length - 1]);
+
+	// Always open menu when connecting to troll room on dekstop
+	if (window.innerWidth > constants.mobileViewportPixels) {
+		store.commit("sidebarOpen", true);
+	}
 });
 
 socket.on("network:options", function (data) {
