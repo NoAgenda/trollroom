@@ -34,6 +34,11 @@
 				</dd>
 			</template>
 
+			<template v-if="message.whois.actual_username">
+				<dt>Actual username:</dt>
+				<dd>{{ message.whois.actual_username }}</dd>
+			</template>
+
 			<template v-if="message.whois.real_name">
 				<dt>Real name:</dt>
 				<dd><ParsedMessage :network="network" :text="message.whois.real_name" /></dd>
@@ -86,9 +91,11 @@
 				<dd>Yes</dd>
 			</template>
 
-			<template v-if="message.whois.certfp">
-				<dt>Certificate:</dt>
-				<dd>{{ message.whois.certfp }}</dd>
+			<template v-if="message.whois.certfps">
+				<template v-for="certfp in message.whois.certfps" :key="certfp">
+					<dt>Certificate:</dt>
+					<dd>{{ certfp }}</dd>
+				</template>
 			</template>
 
 			<template v-if="message.whois.server">
