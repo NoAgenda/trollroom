@@ -10,7 +10,7 @@ COPY . /srv
 RUN set -eux; \
     apk --update --no-cache --virtual build-deps add python3 build-base git; \
     ln -sf python3 /usr/bin/python; \
-    yarn --non-interactive install; \
+    yarn --non-interactive --production=false install; \
     yarn run build
 
 FROM node:21-alpine AS app
