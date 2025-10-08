@@ -29,7 +29,7 @@ module.exports = {
     // Set the port to listen to.
     //
     // This value is set to `9000` by default.
-    port: 9000,
+    port: 8082,
     // ### `bind`
     //
     // Set the local IP to bind to for outgoing connections.

@@ -7,6 +7,6 @@ services:
         #environment:
         #    NODE_ENV: development
         ports:
-            - "9000:9000"
+            - "8082:8082"
         volumes:
             - "./:/srv"

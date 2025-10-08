@@ -20,7 +20,7 @@ ENV THELOUNGE_HOME "/srv/config"
 
 CMD ["/srv/index.js", "start"]
 ENTRYPOINT ["node"]
-EXPOSE 9000
+EXPOSE 8082
 USER node
 WORKDIR /srv
 
