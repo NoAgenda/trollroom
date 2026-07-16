@@ -7,11 +7,7 @@
 
 		<div class="container">
 			<div class="content-logo">
-				<img
-					src="img/trollroom-logo.svg"
-					alt="Troll Room"
-					role="presentation"
-				/>
+				<img src="img/trollroom-logo.svg" alt="Troll Room" role="presentation" />
 			</div>
 		</div>
 
@@ -219,8 +215,8 @@
 			</template>
 
 			<p>
-				The Troll Room is a public IRC server accessibly to anyone. Please note that you need register your
-				nickname before you can start trolling.
+				The Troll Room is a public IRC server accessibly to anyone. Please note that you
+				need register your nickname before you can start trolling.
 			</p>
 
 			<p>
@@ -229,7 +225,8 @@
 					target="_blank"
 					rel="noopener"
 					class="website-link"
-				>Registration Instructions</a>
+					>Registration Instructions</a
+				>
 			</p>
 
 			<h2>User preferences</h2>
@@ -486,7 +483,7 @@ export type NetworkFormDefaults = Partial<ClientNetwork> & {
 	join?: string;
 };
 
-const defaultChannel = '#NoAgenda';
+const defaultChannel = "#NoAgenda";
 
 export default defineComponent({
 	name: "NetworkForm",
@@ -509,26 +506,32 @@ export default defineComponent({
 	setup(props) {
 		const store = useStore();
 		const config = ref(store.state.serverConfiguration);
-		const trollroomNick = ref(window.localStorage.getItem('trollroom-nick') ?? props.defaults?.nick);
-		const trollroomJoin = ref(window.localStorage.getItem('trollroom-join') ?? defaultChannel);
-		const trollroomPassword = ref(window.localStorage.getItem('trollroom-password') ?? '');
+		const trollroomNick = ref(
+			window.localStorage.getItem("trollroom-nick") ?? props.defaults?.nick
+		);
+		const trollroomJoin = ref(window.localStorage.getItem("trollroom-join") ?? defaultChannel);
+		const trollroomPassword = ref(window.localStorage.getItem("trollroom-password") ?? "");
 		const previousUsername = ref(props.defaults?.username);
 		const displayPasswordField = ref(false);
 
 		// Inherit join channels from params, but always join default channel(s).
-		const join = props.defaults?.join;
-		if (typeof join === 'string' && join.toLowerCase() !== defaultChannel.toLowerCase()) {
-			trollroomJoin.value = trollroomJoin.value + ',' + join;
+		const initialJoin = props.defaults?.join;
+
+		if (
+			typeof initialJoin === "string" &&
+			initialJoin.toLowerCase() !== defaultChannel.toLowerCase()
+		) {
+			trollroomJoin.value = trollroomJoin.value + "," + initialJoin;
 		}
 
 		const resetToDefaults = () => {
-			window.localStorage.removeItem('trollroom-nick');
-			window.localStorage.removeItem('trollroom-join');
-			window.localStorage.removeItem('trollroom-password');
+			window.localStorage.removeItem("trollroom-nick");
+			window.localStorage.removeItem("trollroom-join");
+			window.localStorage.removeItem("trollroom-password");
 
 			trollroomNick.value = props.defaults?.nick;
 			trollroomJoin.value = defaultChannel;
-			trollroomPassword.value = '';
+			trollroomPassword.value = "";
 		};
 
 		const publicPassword = ref<HTMLInputElement | null>(null);
@@ -593,8 +596,8 @@ export default defineComponent({
 		const onNickChanged = (event: Event) => {
 			const nick = (event.target as HTMLInputElement)?.value;
 
-			if (nick && nick.substring(0, 5) !== 'Troll' && nick.length !== 8) {
-				localStorage.setItem('trollroom-nick', nick);
+			if (nick && nick.substring(0, 5) !== "Troll" && nick.length !== 8) {
+				localStorage.setItem("trollroom-nick", nick);
 			}
 
 			if (!usernameInput.value) {
@@ -614,7 +617,7 @@ export default defineComponent({
 			const join = (event.target as HTMLInputElement)?.value;
 
 			if (join) {
-				localStorage.setItem('trollroom-join', join);
+				localStorage.setItem("trollroom-join", join);
 			}
 		};
 
@@ -622,7 +625,7 @@ export default defineComponent({
 			const password = (event.target as HTMLInputElement)?.value;
 
 			if (password) {
-				localStorage.setItem('trollroom-password', password);
+				localStorage.setItem("trollroom-password", password);
 			}
 		};
 

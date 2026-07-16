@@ -38,7 +38,6 @@ socket.on("init", async function (data) {
 		if (!router.currentRoute?.value?.name) {
 			await navigate("Livestream");
 		}
-
 	}
 });
 

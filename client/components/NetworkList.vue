@@ -5,18 +5,19 @@
 		role="navigation"
 		aria-label="Network and Channel list"
 	>
-		You are not connected to the Troll Room.<br>
+		You are not connected to the Troll Room.<br />
 		<router-link to="/connect">Connect Now</router-link>
 	</div>
 	<div v-else ref="networklist" role="navigation" aria-label="Network and Channel list">
-		<div class="jump-to-input" v-if="false">
+		<div v-if="false" class="jump-to-input">
+			<label for="channel-search-input" class="sr-only">Search among the channel list</label>
 			<input
+				id="channel-search-input"
 				ref="searchInput"
 				:value="searchText"
 				placeholder="Jump to..."
 				type="search"
 				class="search input mousetrap"
-				aria-label="Search among the channel list"
 				tabindex="-1"
 				@input="setSearchText"
 				@keydown.up="navigateResults($event, -1)"
@@ -341,7 +342,7 @@ export default defineComponent({
 
 			moveItemInArray(netChan.network.channels, oldIndex, newIndex);
 
-			socket.emit("sort:channel", {
+			socket.emit("sort:channels", {
 				network: netChan.network.uuid,
 				order: netChan.network.channels.map((c) => c.id),
 			});

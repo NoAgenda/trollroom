@@ -11,11 +11,9 @@
 				<h3>
 					<span>
 						Powered by
-						<a
-							href="https://thelounge.chat/"
-							target="_blank"
-							rel="noopener"
-						>The Lounge</a>
+						<a href="https://thelounge.chat/" target="_blank" rel="noopener"
+							>The Lounge</a
+						>
 					</span>
 				</h3>
 			</div>
@@ -26,7 +24,8 @@
 					target="_blank"
 					rel="noopener"
 					class="website-link"
-				>How to use the Troll Room</a>
+					>How to use the Troll Room</a
+				>
 			</p>
 
 			<p>
@@ -35,7 +34,8 @@
 					target="_blank"
 					rel="noopener"
 					class="website-link"
-				>Registration Instructions</a>
+					>Registration Instructions</a
+				>
 			</p>
 
 			<h2 v-if="isTouch">Gestures</h2>
@@ -750,6 +750,15 @@
 						Get the topic in the current channel. If <code>newtopic</code> is specified,
 						sets the topic in the current channel.
 					</p>
+				</div>
+			</div>
+
+			<div class="help-item">
+				<div class="subject">
+					<code>/cleartopic</code>
+				</div>
+				<div class="description">
+					<p>Clear the topic in the current channel.</p>
 				</div>
 			</div>
 

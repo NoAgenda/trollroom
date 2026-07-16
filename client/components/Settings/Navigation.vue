@@ -3,10 +3,10 @@
 	<aside class="settings-menu">
 		<h2>Settings</h2>
 		<ul role="navigation" aria-label="Settings tabs">
-			<SettingTabItem name="General" class-name="general" to="" />
+			<SettingTabItem v-if="showGeneral" name="General" class-name="general" to="" />
 			<SettingTabItem name="Appearance" class-name="appearance" to="appearance" />
 			<SettingTabItem name="Notifications" class-name="notifications" to="notifications" />
-			<!--<SettingTabItem name="Account" class-name="account" to="account" />-->
+			<SettingTabItem v-if="!isPublic" name="Account" class-name="account" to="account" />
 		</ul>
 	</aside>
 </template>
@@ -15,7 +15,7 @@
 .settings-menu {
 	position: fixed;
 	/* top: Header + (padding bottom of h2 - border) */
-	top: calc(45px + 5px + 45px);
+	top: calc(45px + 5px);
 	/* Mid page minus width of container and 30 pixels for padding */
 	margin-left: calc(50% - 480px - 30px);
 }
@@ -93,14 +93,18 @@
 <script lang="ts">
 import SettingTabItem from "./SettingTabItem.vue";
 import {defineComponent} from "vue";
+import {useStore} from "../../js/store";
+import {shouldShowGeneralSettings} from "../../js/helpers/settingsTabs";
 
 export default defineComponent({
 	name: "SettingsTabs",
 	components: {
 		SettingTabItem,
 	},
+	setup() {
+		const store = useStore();
+		const isPublic = store.state.serverConfiguration?.public;
+		return {isPublic, showGeneral: shouldShowGeneralSettings()};
+	},
 });
-</script>
-
-<script setup lang="ts">
 </script>

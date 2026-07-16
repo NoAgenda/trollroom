@@ -10,12 +10,7 @@
 			>
 				Add Troll Room to Home screen
 			</button>
-			<button
-				v-if="false"
-				type="button"
-				class="btn"
-				@click.prevent="registerProtocol"
-			>
+			<button v-if="false" type="button" class="btn" @click.prevent="registerProtocol">
 				Open irc:// URLs with The Lounge
 			</button>
 		</div>

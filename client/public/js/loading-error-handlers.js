@@ -29,7 +29,7 @@
 	const msg = document.getElementById("loading-page-message");
 
 	if (msg) {
-		msg.textContent = "Loading the app…";
+		msg.style.display = "";
 	}
 
 	document.getElementById("loading-reload")?.addEventListener("click", () => location.reload());

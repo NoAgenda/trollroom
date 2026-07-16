@@ -1,5 +1,5 @@
 import _ from "lodash";
-import {v4 as uuidv4} from "uuid";
+import crypto from "crypto";
 import IrcFramework, {Client as IRCClient} from "irc-framework";
 import Chan, {ChanConfig, Channel} from "./chan";
 import Msg from "./msg";
@@ -176,7 +176,7 @@ class Network {
 		});
 
 		if (!this.uuid) {
-			this.uuid = uuidv4();
+			this.uuid = crypto.randomUUID();
 		}
 
 		if (!this.name) {
@@ -340,7 +340,10 @@ class Network {
 
 		if (!this.sasl) {
 			delete this.irc.options.sasl_mechanism;
-			delete this.irc.options.account;
+			// irc-framework has a funny fallback where it uses nick + server pw
+			// in the sasl handshake, if account is undefined, so we need an empty
+			// object here to really turn it off
+			this.irc.options.account = {};
 		} else if (this.sasl === "external") {
 			this.irc.options.sasl_mechanism = "EXTERNAL";
 			this.irc.options.account = {};
@@ -421,16 +424,16 @@ class Network {
 		// Sync lobby channel name
 		this.getLobby().name = this.name;
 
+		if (!this.validate(client)) {
+			return;
+		}
+
 		if (this.name !== oldNetworkName) {
 			// Send updated network name to all connected clients
 			client.emit("network:name", {
 				uuid: this.uuid,
 				name: this.name,
 			});
-		}
-
-		if (!this.validate(client)) {
-			return;
 		}
 
 		if (this.irc) {
@@ -473,6 +476,10 @@ class Network {
 
 	destroy() {
 		this.channels.forEach((channel) => channel.destroy());
+	}
+
+	isIgnoredUser(data: Hostmask) {
+		return this.ignoreList.some((entry) => Helper.compareHostmask(entry, data));
 	}
 
 	setNick(this: Network, nick: string) {
@@ -521,7 +528,7 @@ class Network {
 			const transport = this.irc.connection.transport;
 
 			if (transport.socket) {
-				const isLocalhost = transport.socket.remoteAddress === "127.0.0.1";
+				const isLocalhost = ["127.0.0.1", "::1"].includes(transport.socket.remoteAddress);
 				const isAuthorized = transport.socket.encrypted && transport.socket.authorized;
 
 				status.connected = transport.isConnected();

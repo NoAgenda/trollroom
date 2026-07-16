@@ -1,5 +1,11 @@
 <template>
-	<div v-if="!store.state.appLoaded" id="connect" class="window" role="tabpanel" aria-label="Connect">
+	<div
+		v-if="!store.state.appLoaded"
+		id="connect"
+		class="window"
+		role="tabpanel"
+		aria-label="Connect"
+	>
 		<Player />
 		<div class="header">
 			<SidebarToggle />
@@ -7,11 +13,7 @@
 
 		<div class="container">
 			<div class="content-logo">
-				<img
-					src="img/trollroom-logo.svg"
-					alt="Troll Room"
-					role="presentation"
-				/>
+				<img src="img/trollroom-logo.svg" alt="Troll Room" role="presentation" />
 			</div>
 		</div>
 		<div class="container">
@@ -22,8 +24,8 @@
 			<p v-if="customError">{{ customError }}</p>
 
 			<p>
-				If the Troll Room fails to load correctly, make sure you're connected to the internet and reload
-				the page.
+				If the Troll Room fails to load correctly, make sure you're connected to the
+				internet and reload the page.
 			</p>
 			<p>
 				If this message persists, try contacting one of our resident Dudes named Ben,
@@ -57,7 +59,7 @@ export default defineComponent({
 	setup(props) {
 		const store = useStore();
 
-		const customError = ref<string|null>(null);
+		const customError = ref<string | null>(null);
 		const disabled = ref(false);
 
 		if (window.g_TrollRoomHandleError) {

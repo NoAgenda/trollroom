@@ -2,6 +2,12 @@
 @import "fontawesome.css";
 @import "../../node_modules/primer-tooltips/build/build.css";
 
+/* Allow tooltips via data-tooltip instead of aria-label to avoid
+   duplicating accessible names on wrapper + child elements */
+.tooltipped[data-tooltip]::after {
+	content: attr(data-tooltip);
+}
+
 :root {
 	/* Main text color */
 	--body-color: #222;
@@ -328,6 +334,7 @@ p {
 #chat .msg[data-type="ctcp_request"] .from::before,
 #chat .msg[data-type="whois"] .from::before,
 #chat .msg[data-type="nick"] .from::before,
+#chat .msg[data-type="chghost"] .from::before,
 #chat .msg[data-type="action"] .from::before,
 #chat .msg[data-type="plugin"] .from::before,
 #chat .msg[data-type="raw"] .from::before,
@@ -508,7 +515,8 @@ p {
 	color: #2ecc40;
 }
 
-#chat .msg[data-type="nick"] .from::before {
+#chat .msg[data-type="nick"] .from::before,
+#chat .msg[data-type="chghost"] .from::before {
 	content: "\f007"; /* http://fontawesome.io/icon/user/ */
 	color: #2ecc40;
 }
@@ -718,6 +726,7 @@ p {
 
 #sidebar .logo-container {
 	text-align: center;
+	margin-bottom: 8px;
 }
 
 #sidebar .logo,
@@ -1298,6 +1307,11 @@ textarea.input {
 	cursor: pointer;
 }
 
+.scroll-down:focus:not(:focus-visible)::before,
+.scroll-down:focus:not(:focus-visible)::after {
+	display: none;
+}
+
 .scroll-down-shown {
 	opacity: 1;
 	transform: none;
@@ -1573,6 +1587,7 @@ textarea.input {
 #chat .msg[data-type="kick"] .content,
 #chat .msg[data-type="mode"] .content,
 #chat .msg[data-type="nick"] .content,
+#chat .msg[data-type="chghost"] .content,
 #chat .msg[data-type="part"] .content,
 #chat .msg[data-type="quit"] .content,
 #chat .msg[data-type="topic"] .content,
@@ -1842,6 +1857,7 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 
 #loading {
 	display: flex;
+	visibility: hidden;
 	font-size: 14px;
 	height: 100%;
 }
@@ -2974,10 +2990,6 @@ p.lead {
 	margin-bottom: 16px;
 }
 
-#loading {
-	visibility: hidden;
-}
-
 #player {
 	position: sticky;
 	top: 0;
@@ -2986,10 +2998,6 @@ p.lead {
 
 #player .topic {
 	cursor: pointer;
-}
-
-#sidebar .logo-container {
-	margin-bottom: 8px;
 }
 
 .channel-list-item[data-type="livestream"] {
@@ -3038,7 +3046,7 @@ a.btn:hover,
 	height: 36px;
 	line-height: 1;
 	width: 36px;
-	transition: opacity .2s;
+	transition: opacity 0.2s;
 }
 
 .inline-player .ip-header a::before,
@@ -3066,5 +3074,5 @@ a.btn:hover,
 
 .inline-player audio {
 	width: 100%;
-	padding: 0 6px 6px 6px;
+	padding: 0 6px 6px;
 }

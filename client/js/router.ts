@@ -9,7 +9,7 @@ import Changelog from "../components/Windows/Changelog.vue";
 import NetworkEdit from "../components/Windows/NetworkEdit.vue";
 import SearchResults from "../components/Windows/SearchResults.vue";
 import Livestream from "../components/Windows/Livestream.vue";
-import Information from '../components/Windows/Information.vue';
+import Information from "../components/Windows/Information.vue";
 import RoutedChat from "../components/RoutedChat.vue";
 import {store} from "./store";
 
@@ -18,6 +18,7 @@ import GeneralSettings from "../components/Settings/General.vue";
 import AccountSettings from "../components/Settings/Account.vue";
 import NotificationSettings from "../components/Settings/Notifications.vue";
 import {ClientChan} from "./types";
+import {shouldShowGeneralSettings} from "./helpers/settingsTabs";
 
 const router = createRouter({
 	history: createWebHashHistory(),
@@ -60,6 +61,14 @@ const router = createRouter({
 					name: "General",
 					path: "",
 					component: GeneralSettings,
+					beforeEnter(to, from, next) {
+						if (!shouldShowGeneralSettings()) {
+							next({name: "Appearance"});
+							return;
+						}
+
+						next();
+					},
 				},
 				{
 					name: "Appearance",

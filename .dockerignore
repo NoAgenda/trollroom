@@ -2,3 +2,7 @@
 /.github
 /node_modules
 /.thelounge_home
+/public
+/dist
+/coverage
+/test

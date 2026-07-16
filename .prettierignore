@@ -24,5 +24,8 @@ yarn.lock
 .eslintignore
 .gitattributes
 .browserslistrc
+.node-version
 
 *.css
+.dockerignore
+.yarnrc

@@ -13,7 +13,14 @@
 
 			<div class="about">
 				<p>
-					The No Agenda Show is an award-winning podcast created by <a href="https://www.noagendashow.net/adam-curry" target="_blank">Adam Curry</a> and <a href="https://www.noagendashow.net/john-c-dvorak" target="_blank">John C. Dvorak</a>. The show relies on the direct support of the producers and consumers of the show using a <a href="https://value4value.info" target="_blank">value-for-value</a> model.
+					The No Agenda Show is an award-winning podcast created by
+					<a href="https://www.noagendashow.net/adam-curry" target="_blank">Adam Curry</a>
+					and
+					<a href="https://www.noagendashow.net/john-c-dvorak" target="_blank"
+						>John C. Dvorak</a
+					>. The show relies on the direct support of the producers and consumers of the
+					show using a
+					<a href="https://value4value.info" target="_blank">value-for-value</a> model.
 				</p>
 
 				<p>
@@ -22,7 +29,8 @@
 						target="_blank"
 						rel="noopener"
 						class="btn"
-					>No Agenda Show</a>
+						>No Agenda Show</a
+					>
 				</p>
 			</div>
 
@@ -31,7 +39,9 @@
 			</h2>
 
 			<p>
-				The No Agenda Stream is an online audio broadcast that's live 24 hours a day, 7 days a week, filled with quality podcasts curated for listeners of No Agenda. In addition to running pre-recorded podcasts, some shows are recorded live on the air.
+				The No Agenda Stream is an online audio broadcast that's live 24 hours a day, 7 days
+				a week, filled with quality podcasts curated for listeners of No Agenda. In addition
+				to running pre-recorded podcasts, some shows are recorded live on the air.
 			</p>
 
 			<p>
@@ -40,7 +50,8 @@
 					target="_blank"
 					rel="noopener"
 					class="website-link"
-				>Stream Playlist</a>
+					>Stream Playlist</a
+				>
 			</p>
 
 			<p>
@@ -49,7 +60,8 @@
 					target="_blank"
 					rel="noopener"
 					class="website-link"
-				>Direct Link</a>
+					>Direct Link</a
+				>
 			</p>
 
 			<h2 class="help-version-title">
@@ -58,8 +70,8 @@
 
 			<div class="about">
 				<p>
-					The Troll Room is a public IRC server accessibly to anyone. Please note that you need register your
-					nickname before you can start trolling.
+					The Troll Room is a public IRC server accessibly to anyone. Please note that you
+					need register your nickname before you can start trolling.
 				</p>
 
 				<p>
@@ -68,7 +80,8 @@
 						target="_blank"
 						rel="noopener"
 						class="website-link"
-					>How to use the Troll Room</a>
+						>How to use the Troll Room</a
+					>
 				</p>
 
 				<p>
@@ -77,7 +90,8 @@
 						target="_blank"
 						rel="noopener"
 						class="website-link"
-					>Registration Instructions</a>
+						>Registration Instructions</a
+					>
 				</p>
 
 				<p>
@@ -85,8 +99,12 @@
 				</p>
 
 				<p>
-					<router-link v-if="store.state.networks.length === 0" to="/connect" class="btn">Connect to the Troll Room</router-link>
-					<router-link v-else to="/chan-2" class="btn">Return to the troll room</router-link>
+					<router-link v-if="store.state.networks.length === 0" to="/connect" class="btn"
+						>Connect to the Troll Room</router-link
+					>
+					<router-link v-else to="/chan-2" class="btn"
+						>Return to the troll room</router-link
+					>
 				</p>
 			</div>
 
@@ -96,9 +114,14 @@
 
 			<div class="about">
 				<p>
-					The No Agenda Stream and the Troll Room are provided by <a href="https://noagenda.ninja" target="_blank">voidzero</a>.<br>
-					The programming of the streams is managed by <a href="https://bemrose.social/ryan" target="_blank">Sir Bemrose</a> and <a href="https://getalby.com/p/cottongintonic" target="_blank">cottongin</a>.<br>
-					noagenda.stream was created by <a href="https://www.codedmonkey.com" target="_blank">Coded Monkey</a>.
+					The No Agenda Stream and the Troll Room are provided by
+					<a href="https://noagenda.ninja" target="_blank">voidzero</a>.<br />
+					The programming of the streams is managed by
+					<a href="https://bemrose.social/ryan" target="_blank">Sir Bemrose</a> and
+					<a href="https://getalby.com/p/cottongintonic" target="_blank">cottongin</a
+					>.<br />
+					noagenda.stream was created by
+					<a href="https://www.codedmonkey.com" target="_blank">Coded Monkey</a>.
 				</p>
 			</div>
 		</div>

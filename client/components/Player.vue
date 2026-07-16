@@ -1,22 +1,8 @@
 <template>
 	<div id="player" class="header">
-		<button
-			v-if="!playing"
-			class="play"
-			aria-label="Start playing livestream"
-			@click="play"
-		/>
-		<button
-			v-else
-			class="pause"
-			aria-label="Stop playing livestream"
-			@click="pause"
-		/>
-		<span
-			class="topic"
-			:title="`Currently playing: ${title}`"
-			@click="openLivestream"
-		>
+		<button v-if="!playing" class="play" aria-label="Start playing livestream" @click="play" />
+		<button v-else class="pause" aria-label="Stop playing livestream" @click="pause" />
+		<span class="topic" :title="`Currently playing: ${title}`" @click="openLivestream">
 			{{ title }}
 		</span>
 	</div>
@@ -24,11 +10,11 @@
 
 <script lang="ts">
 import {defineComponent, onMounted, ref} from "vue";
-import Player from "../js/player"
-import {router} from '../js/router';
+import Player from "../js/player";
+import {router} from "../js/router";
 
 export default defineComponent({
-	name: 'Player',
+	name: "Player",
 	components: {},
 	setup() {
 		const playing = ref(Player.playing);
@@ -39,7 +25,7 @@ export default defineComponent({
 		const openLivestream = async () => await router.push({name: "Livestream"});
 
 		onMounted(() => {
-			Player.subscribe('update', (event: any) => {
+			Player.subscribe("update", (event: any) => {
 				playing.value = event.playing;
 				title.value = event.music ? event.musicTitle : event.title;
 			});

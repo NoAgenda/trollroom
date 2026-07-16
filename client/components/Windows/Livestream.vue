@@ -6,11 +6,7 @@
 
 		<div class="container">
 			<div class="content-logo">
-				<img
-					src="/img/trollroom-logo.svg"
-					alt="Troll Room"
-					role="presentation"
-				/>
+				<img src="/img/trollroom-logo.svg" alt="Troll Room" role="presentation" />
 			</div>
 
 			<h1 class="title">No Agenda Stream</h1>
@@ -32,7 +28,8 @@
 					target="_blank"
 					rel="noopener"
 					class="website-link"
-				>No Agenda Show</a>
+					>No Agenda Show</a
+				>
 			</p>
 
 			<p>
@@ -41,12 +38,15 @@
 					target="_blank"
 					rel="noopener"
 					class="website-link"
-				>No Agenda Donations</a>
+					>No Agenda Donations</a
+				>
 			</p>
 
 			<h2>Troll Room</h2>
 
-			<router-link v-if="store.state.networks.length === 0" to="/connect" class="btn">Connect to the Troll Room</router-link>
+			<router-link v-if="store.state.networks.length === 0" to="/connect" class="btn"
+				>Connect to the Troll Room</router-link
+			>
 			<router-link v-else to="/chan-2" class="btn">Return to the troll room</router-link>
 
 			<p>
@@ -59,9 +59,9 @@
 <script lang="ts">
 import {defineComponent} from "vue";
 
-import InlinePlayer from '../InlinePlayer.vue';
-import SidebarToggle from '../SidebarToggle.vue';
-import {useStore} from '../../js/store';
+import InlinePlayer from "../InlinePlayer.vue";
+import SidebarToggle from "../SidebarToggle.vue";
+import {useStore} from "../../js/store";
 
 export default defineComponent({
 	name: "Livestream",

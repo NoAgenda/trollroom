@@ -29,7 +29,14 @@
 				>
 			</div>
 
-			<router-link to="/livestream" class="channel-list-item" aria-label="Livestream" title="Livestream" data-name="Livestream" data-type="livestream">
+			<router-link
+				to="/livestream"
+				class="channel-list-item"
+				aria-label="Livestream"
+				title="Livestream"
+				data-name="Livestream"
+				data-type="livestream"
+			>
 				<div class="lobby-wrap">
 					<span title="Livestream" class="name">Livestream</span>
 				</div>
@@ -38,9 +45,7 @@
 			<NetworkList />
 		</div>
 		<footer id="footer">
-			<span
-				class="tooltipped tooltipped-n tooltipped-no-touch"
-				aria-label="Information"
+			<span class="tooltipped tooltipped-n tooltipped-no-touch" aria-label="Information"
 				><router-link
 					v-slot:default="{navigate, isActive}"
 					to="/information"
@@ -68,9 +73,7 @@
 						@keypress.enter="navigate"
 					></button> </router-link
 			></span>
-			<span
-				class="tooltipped tooltipped-n tooltipped-no-touch"
-				aria-label="Help"
+			<span class="tooltipped tooltipped-n tooltipped-no-touch" aria-label="Help"
 				><router-link
 					v-slot:default="{navigate, isActive}"
 					to="/help"
@@ -108,7 +111,7 @@ export default defineComponent({
 		overlay: {type: Object as PropType<HTMLElement | null>, required: false},
 	},
 	setup(props) {
-		const isDevelopment = process.env.NODE_ENV !== "production";
+		const isDevelopment = import.meta.env.DEV;
 
 		const store = useStore();
 		const route = useRoute();
