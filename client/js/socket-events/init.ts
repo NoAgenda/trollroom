@@ -28,6 +28,10 @@ socket.on("init", async function (data) {
 			// so we can continue on.
 		}
 
+		if (window.g_TheLoungeRemoveLoading) {
+			window.g_TheLoungeRemoveLoading();
+		}
+
 		if (await handleQueryParams()) {
 			// If we handled query parameters like irc:// links or just general
 			// connect parameters in public mode, then nothing to do here
