@@ -17,6 +17,7 @@ FROM node:24-alpine AS app
 
 ENV NODE_ENV production
 ENV THELOUNGE_HOME "/srv/config"
+ENV PORT 8082
 
 CMD ["/srv/index.js", "start"]
 ENTRYPOINT ["node"]
