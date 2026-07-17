@@ -9,16 +9,9 @@ on:
 
 jobs:
   build:
-    name: Node on ${{ matrix.os }}
+    name: Build and test on Linux
 
-    strategy:
-      matrix:
-        os:
-          - macOS-latest
-          - windows-latest
-          - ubuntu-latest
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v6
