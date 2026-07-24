@@ -126,7 +126,7 @@
     "sinon": "13.0.2",
     "socket.io-client": "4.5.0",
     "sortablejs": "1.15.2",
-    "stylelint": "14.3.0",
+    "stylelint": "14.16.1",
     "stylelint-config-standard": "24.0.0",
     "ts-node": "10.7.0",
     "ts-sinon": "2.0.2",
