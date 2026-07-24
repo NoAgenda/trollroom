@@ -2,7 +2,7 @@ import Config from "../config";
 import busboy, {BusboyHeaders} from "@fastify/busboy";
 import path from "path";
 import fs from "fs";
-import fileType from "file-type";
+import {fileTypeFromBuffer} from "file-type";
 import crypto from "crypto";
 import log from "../log";
 import contentDisposition from "content-disposition";
@@ -308,7 +308,7 @@ class Uploader {
 			await handle.close();
 
 			// returns {ext, mime} if found, null if not.
-			const file = await fileType.fromBuffer(buffer);
+			const file = await fileTypeFromBuffer(buffer);
 
 			// if a file type was detected correctly, return it
 			if (file) {
