@@ -405,7 +405,7 @@ class Client {
 
 	updateSession(token: string, ip: string, request: any) {
 		const client = this;
-		const agent = UAParser(request.headers["user-agent"] || "");
+		const agent = UAParser.UAParser(request.headers["user-agent"] || "");
 		let friendlyAgent = "";
 
 		if (agent.browser.name) {
