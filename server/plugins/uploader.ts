@@ -177,12 +177,10 @@ class Uploader {
 		}
 
 		// Only allow multipart, as busboy can throw an error on unsupported types
-		if (
-			!(
-				req.headers["content-type"] &&
-				req.headers["content-type"].startsWith("multipart/form-data")
-			)
-		) {
+		if (!(
+			req.headers["content-type"] &&
+			req.headers["content-type"].startsWith("multipart/form-data")
+		)) {
 			return abortWithError(Error("Unsupported Content Type"));
 		}
 

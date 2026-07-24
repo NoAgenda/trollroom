@@ -341,7 +341,7 @@ module.exports = {
 	webirc: process.env.WEBIRC_PASSWORD
 		? {
 				"irc.zeronode.net": process.env.WEBIRC_PASSWORD,
-		  }
+			}
 		: null,
 	// ## identd and oidentd support
 	// ### `identd`
