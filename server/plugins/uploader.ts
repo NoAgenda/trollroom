@@ -5,7 +5,7 @@ import fs from "fs";
 import {fileTypeFromBuffer} from "file-type";
 import crypto from "crypto";
 import log from "../log";
-import contentDisposition from "content-disposition";
+import {create as contentDisposition} from "content-disposition";
 import type {Socket} from "socket.io";
 import {Request, Response} from "express";
 import NodeBuffer, {Buffer} from "buffer";

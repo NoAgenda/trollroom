@@ -1010,11 +1010,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/content-disposition@0.5.8":
-  version "0.5.8"
-  resolved "https://registry.yarnpkg.com/@types/content-disposition/-/content-disposition-0.5.8.tgz#6742a5971f490dc41e59d277eee71361fea0b537"
-  integrity sha512-QVSSvno3dE0MgO76pJhmv4Qyi/j0Yk9pBp0Y7TJ2Tlj+KCgJWY6qX7nnxCOLkZ3VYRSIk1WTxCvwUSdx6CCLdg==
-
 "@types/cookie@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@types/cookie/-/cookie-0.4.1.tgz#bfd02c1f2224567676c1545199f87c3a861d878d"
@@ -2029,6 +2024,11 @@ content-disposition@0.5.4:
   integrity sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==
   dependencies:
     safe-buffer "5.2.1"
+
+content-disposition@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/content-disposition/-/content-disposition-2.0.1.tgz#88a75c7a52ef9c407c96035fe83a66939c2a4dc9"
+  integrity sha512-e+H0ZXHSWYrENhQzw1LPuP4oF5MzVKmDU6d3hxlvaPEYLLg62MxtQNPRx4SYSuYJSBUgnQIG4HIN2tEtNv7Dog==
 
 content-type@~1.0.4, content-type@~1.0.5:
   version "1.0.5"
