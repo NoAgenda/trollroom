@@ -118,7 +118,7 @@
     "npm-run-all2": "5.0.0",
     "postcss": "8.5.12",
     "postcss-import": "14.0.2",
-    "postcss-preset-env": "7.3.0",
+    "postcss-preset-env": "11.3.2",
     "prettier": "3.9.6",
     "pretty-quick": "4.2.2",
     "primer-tooltips": "2.0.0",
