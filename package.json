@@ -131,7 +131,7 @@
     "sortablejs": "1.15.2",
     "stylelint": "14.16.1",
     "stylelint-config-standard": "24.0.0",
-    "ts-node": "10.7.0",
+    "ts-node": "10.9.2",
     "ts-sinon": "2.0.2",
     "tsx": "4.23.1",
     "typescript": "5.4.5",
