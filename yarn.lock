@@ -3337,7 +3337,7 @@ ipaddr.js@1.9.1:
 
 "irc-framework@github:kiwiirc/irc-framework#9578e59":
   version "4.14.0"
-  resolved "git+ssh://git@github.com/kiwiirc/irc-framework.git#9578e59a1056499e4a03a0f0fd2c260e9aadc541"
+  resolved "https://codeload.github.com/kiwiirc/irc-framework/tar.gz/9578e59a1056499e4a03a0f0fd2c260e9aadc541"
   dependencies:
     buffer "^6.0.3"
     core-js "^3.38.1"
