@@ -140,7 +140,7 @@
     "vitest": "4.1.10",
     "vue": "3.2.35",
     "vue-eslint-parser": "9.4.3",
-    "vue-router": "4.0.15",
+    "vue-router": "4.5.1",
     "vuex": "4.0.2"
   }
 }
