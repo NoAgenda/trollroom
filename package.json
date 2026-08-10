@@ -120,7 +120,7 @@
     "mousetrap": "1.6.5",
     "normalize.css": "8.0.1",
     "npm-run-all2": "9.0.2",
-    "postcss": "8.5.23",
+    "postcss": "8.5.26",
     "postcss-import": "16.1.1",
     "postcss-preset-env": "11.3.2",
     "prettier": "3.9.6",
