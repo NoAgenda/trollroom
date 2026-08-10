@@ -107,7 +107,7 @@
     "@vitest/coverage-istanbul": "4.1.10",
     "@vue/runtime-dom": "3.2.33",
     "@vue/test-utils": "2.4.6",
-    "cross-env": "7.0.3",
+    "cross-env": "10.1.0",
     "cssnano": "5.0.17",
     "dayjs": "1.10.8",
     "emoji-regex": "10.2.1",
