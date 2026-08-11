@@ -130,7 +130,7 @@
     "socket.io-client": "4.8.3",
     "sortablejs": "1.15.7",
     "stylelint": "14.16.1",
-    "stylelint-config-standard": "24.0.0",
+    "stylelint-config-standard": "29.0.0",
     "ts-node": "10.9.2",
     "ts-sinon": "2.0.2",
     "tsx": "4.23.1",
