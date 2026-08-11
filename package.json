@@ -84,7 +84,7 @@
     "yarn": "1.22.22"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "5.15.4",
+    "@fortawesome/fontawesome-free": "7.3.1",
     "@textcomplete/core": "0.1.13",
     "@textcomplete/textarea": "0.1.12",
     "@types/bcryptjs": "2.4.6",
