@@ -1,5 +1,5 @@
 import colors from "chalk";
-import read from "read";
+import {read} from "read";
 
 function timestamp() {
 	const datetime = new Date().toISOString().split(".")[0].replace("T", " ");
@@ -31,7 +31,10 @@ const log = {
 		callback: (error, result, isDefault) => void
 	): void {
 		options.prompt = [timestamp(), colors.cyan("[PROMPT]"), options.text].join(" ");
-		read(options, callback);
+		read(options).then(
+			(result) => callback(null, result, false),
+			(error) => callback(error, undefined, false)
+		);
 	},
 };
 
