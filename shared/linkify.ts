@@ -1,4 +1,4 @@
-import LinkifyIt, {Match} from "linkify-it";
+import {LinkifyIt, Match} from "linkify-it";
 import tlds from "tlds";
 
 export type LinkPart = {
@@ -7,7 +7,7 @@ export type LinkPart = {
 	link: string;
 };
 
-const linkify = new LinkifyIt().tlds(tlds).tlds("onion", true);
+const linkify = new LinkifyIt({fuzzyLink: true, urlAuth: true}).tlds(tlds).tlds("onion", true);
 
 // Known schemes to detect in text
 const commonSchemes = [
@@ -28,7 +28,9 @@ const commonSchemes = [
 ];
 
 for (const schema of commonSchemes) {
-	linkify.add(schema + ":", "http:");
+	linkify.add(schema + ":", {
+		validate: (text, pos, self) => self.testSchemaAt(text, "http:", pos),
+	});
 }
 
 linkify.add("web+", {
