@@ -1,6 +1,6 @@
-@import "../../node_modules/normalize.css/normalize.css";
-@import "fontawesome.css";
-@import "../../node_modules/primer-tooltips/build/build.css";
+@import url("../../node_modules/normalize.css/normalize.css");
+@import url("fontawesome.css");
+@import url("../../node_modules/primer-tooltips/build/build.css");
 
 /* Allow tooltips via data-tooltip instead of aria-label to avoid
    duplicating accessible names on wrapper + child elements */
@@ -419,7 +419,7 @@ p {
 .channel-list-item[data-type="special"]::before { content: "\f03a"; /* http://fontawesome.io/icon/list/ */ }
 .channel-list-item[data-type="livestream"]::before { content: "\f130"; /* http://fontawesome.io/icon/microphone/ */ }
 
-.channel-list-item.has-draft:not(.active):not([data-type="lobby"])::before {
+.channel-list-item.has-draft:not(.active, [data-type="lobby"])::before {
 	content: "\f304"; /* https://fontawesome.com/icons/pen?style=solid */
 }
 
