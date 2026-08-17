@@ -80,7 +80,7 @@
     "socket.io": "4.8.3",
     "tlds": "1.261.0",
     "ua-parser-js": "2.0.10",
-    "web-push": "3.4.5",
+    "web-push": "3.6.7",
     "yarn": "1.22.22"
   },
   "devDependencies": {
@@ -99,7 +99,7 @@
     "@types/read": "0.0.32",
     "@types/semver": "7.7.1",
     "@types/sortablejs": "1.15.9",
-    "@types/web-push": "3.3.2",
+    "@types/web-push": "3.6.4",
     "@types/ws": "8.18.1",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
