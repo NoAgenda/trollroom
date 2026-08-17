@@ -1191,10 +1191,12 @@
   resolved "https://registry.npmjs.org/@tsconfig/node16/-/node16-1.0.4.tgz"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
-"@types/bcryptjs@2.4.6":
-  version "2.4.6"
-  resolved "https://registry.npmjs.org/@types/bcryptjs/-/bcryptjs-2.4.6.tgz"
-  integrity sha512-9xlo6R2qDs5uixm0bcIqCeMCE6HiQsIyel9KQySStiyqNl2tnj2mP3DX1Nf56MD6KMenNNlBBsy3LJ7gUEQPXQ==
+"@types/bcryptjs@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/bcryptjs/-/bcryptjs-3.0.0.tgz#d7be11653aa82cf17ffee4f3925f1f80cfc1add2"
+  integrity sha512-WRZOuCuaz8UcZZE4R5HXTco2goQSI2XxjGY3hbM/xDvwmqFWd4ivooImsMx65OKM6CtNKbnZ5YL+YwAwK7c1dg==
+  dependencies:
+    bcryptjs "*"
 
 "@types/body-parser@*":
   version "1.19.6"
@@ -1912,10 +1914,10 @@ baseline-browser-mapping@^2.10.44:
   resolved "https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.11.4.tgz"
   integrity sha512-s4+sLr9mZ/CyqeRritFeYV/Zx73OAtmaHn6kkBS1XRoJn1hrg3xIDUcpicAEX68tkcIN0iBCgti31C8zxtkhsQ==
 
-bcryptjs@2.4.3:
-  version "2.4.3"
-  resolved "https://registry.npmjs.org/bcryptjs/-/bcryptjs-2.4.3.tgz"
-  integrity sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==
+bcryptjs@*, bcryptjs@3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-3.0.3.tgz#4b93d6a398c48bfc9f32ee65d301174a8a8ea56f"
+  integrity sha512-GlF5wPWnSa/X5LKM1o0wz0suXIINz1iHRLvTS+sLyi7XPbe5ycmYI3DlZqVGZZtDgl4DmasFg7gOB3JYbphV5g==
 
 bidi-js@^1.0.3:
   version "1.0.3"
