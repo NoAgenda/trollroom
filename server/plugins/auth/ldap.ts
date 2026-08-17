@@ -107,7 +107,7 @@ function advancedLdapAuth(user: string, password: string, callback: (success: bo
 
 			res.on("searchEntry", function (entry) {
 				found = true;
-				const bindDN = entry.objectName;
+				const bindDN = entry.objectName!.toString();
 				log.info(`Auth against LDAP ${config.ldap.url} with found bindDN ${bindDN || ""}`);
 				ldapclient.unbind();
 

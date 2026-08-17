@@ -50,7 +50,6 @@ function startLdapServer(callback) {
 			const password = req.credentials;
 
 			if (bindDN in authorizedUsers && authorizedUsers[bindDN] === password) {
-				req.connection.ldap.bindDN = req.dn;
 				res.end();
 				return next();
 			}
@@ -63,11 +62,11 @@ function startLdapServer(callback) {
 		const obj = {
 			dn: userDN,
 			attributes: {
-				objectclass: ["person", "top"],
+				objectClass: ["person", "top"],
 				cn: ["john doe"],
 				sn: ["johnny"],
 				uid: ["johndoe"],
-				memberof: [baseDN],
+				memberOf: [baseDN],
 			},
 		};
 
@@ -84,7 +83,7 @@ function startLdapServer(callback) {
 	return server;
 }
 
-function testLdapAuth() {
+function testLdapAuth(advanced: boolean) {
 	// Create mock manager and client. When client is true, manager should not
 	// be used. But ideally the auth plugin should not use any of those.
 	const manager = {} as ClientManager;
@@ -110,7 +109,7 @@ function testLdapAuth() {
 			ldapAuth.auth(manager, client as any, user, wrongPassword, function (valid) {
 				expect(valid).to.equal(false);
 				expect(error).to.equal(
-					"LDAP bind failed: InsufficientAccessRightsError: InsufficientAccessRightsError\n"
+					"LDAP bind failed: InsufficientAccessRightsError: Insufficient Access Rights\n"
 				);
 				errorLogStub.restore();
 				resolve();
@@ -119,15 +118,20 @@ function testLdapAuth() {
 
 	it("should fail to authenticate with incorrect username", () =>
 		new Promise<void>((resolve) => {
-			let warning = "";
-			const warnLogStub = sinon
-				.stub(log, "warn")
-				.callsFake(TestUtil.sanitizeLog((str) => (warning += str)));
+			let message = "";
+			const logger = advanced ? "warn" : "error";
+			const logStub = sinon
+				.stub(log, logger)
+				.callsFake(TestUtil.sanitizeLog((str) => (message += str)));
 
 			ldapAuth.auth(manager, client as any, wrongUser, correctPassword, function (valid) {
 				expect(valid).to.equal(false);
-				expect(warning).to.equal("LDAP Search did not find anything for: eve (0)\n");
-				warnLogStub.restore();
+				expect(message).to.equal(
+					advanced
+						? "LDAP Search did not find anything for: eve (0)\n"
+						: "LDAP bind failed: OtherError: Other\n"
+				);
+				logStub.restore();
 				resolve();
 			});
 		}));
@@ -174,13 +178,19 @@ describe("LDAP authentication plugin", function () {
 	});
 
 	describe("Simple LDAP authentication (predefined DN pattern)", function () {
-		Config.values.ldap.baseDN = baseDN;
-		testLdapAuth();
+		beforeEach(function () {
+			Config.values.ldap.baseDN = baseDN;
+		});
+
+		testLdapAuth(false);
 	});
 
 	describe("Advanced LDAP authentication (DN found by a prior search query)", function () {
-		delete Config.values.ldap.baseDN;
-		testLdapAuth();
+		beforeEach(function () {
+			delete Config.values.ldap.baseDN;
+		});
+
+		testLdapAuth(true);
 
 		it("should reject filter-injection usernames (RFC 4515)", () =>
 			new Promise<void>((resolve) => {
