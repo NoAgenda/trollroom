@@ -112,7 +112,7 @@
     "dayjs": "1.11.21",
     "emoji-regex": "10.2.1",
     "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
+    "eslint-config-prettier": "10.1.8",
     "eslint-define-config": "2.1.0",
     "eslint-plugin-vue": "9.33.0",
     "fuzzy": "0.1.3",
