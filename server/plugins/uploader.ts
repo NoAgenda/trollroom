@@ -1,5 +1,5 @@
 import Config from "../config";
-import busboy, {BusboyHeaders} from "@fastify/busboy";
+import busboy, {BusboyHeaders, BusboyInstance} from "@fastify/busboy";
 import path from "path";
 import fs from "fs";
 import {fileTypeFromBuffer} from "file-type";
@@ -130,7 +130,7 @@ class Uploader {
 	}
 
 	static routeUploadFile(this: void, req: Request, res: Response) {
-		let busboyInstance: busboy | null | undefined;
+		let busboyInstance: BusboyInstance | null | undefined;
 		let uploadUrl: string | URL;
 		let randomName: string;
 		let destDir: fs.PathLike;
@@ -281,7 +281,7 @@ class Uploader {
 		});
 
 		// pipe request body to busboy for processing
-		return req.pipe(busboyInstance);
+		req.pipe(busboyInstance);
 	}
 
 	static getMaxFileSize() {
