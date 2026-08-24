@@ -1405,10 +1405,12 @@
   resolved "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.7.tgz"
   integrity sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==
 
-"@types/read@0.0.32":
-  version "0.0.32"
-  resolved "https://registry.npmjs.org/@types/read/-/read-0.0.32.tgz"
-  integrity sha512-BbcOjC8nPoAKYK500K4ckuAJgiSZKc+4SBc+Isnf7AP088RNvCTqFay69bnRG6oOYf3/Kba4DVMLFEUrgAlZtA==
+"@types/read@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/read/-/read-3.0.0.tgz#d67cc6c48915f712aaf437d60f64aa4289356e64"
+  integrity sha512-KydXDLBAhC9QHhuYKWYTcbMY2lpfRL1kp+43rZBVDl+l7sMUSPsRh7ttg7senFRi3w2444AQFDvLpMsC60ECyg==
+  dependencies:
+    read "*"
 
 "@types/semver@7.8.0":
   version "7.8.0"
@@ -5314,7 +5316,7 @@ read-pkg@^5.2.0:
     parse-json "^5.0.0"
     type-fest "^0.6.0"
 
-read@6.0.0:
+read@*, read@6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/read/-/read-6.0.0.tgz#755f0c3110a143060ca2ddc129ac657f97d589cf"
   integrity sha512-Tg/LaEke7h9SDbp0xJJj53oa4s1VPPySVnxQF9nUS9DgA25M/ZCLk7RVF1kHjytC87XbkgQKmQ/79+DQgEIqLA==
