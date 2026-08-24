@@ -109,7 +109,7 @@
     "@vue/test-utils": "2.4.6",
     "cross-env": "10.1.0",
     "cssnano": "5.0.17",
-    "dayjs": "1.11.21",
+    "dayjs": "1.11.23",
     "emoji-regex": "10.2.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
