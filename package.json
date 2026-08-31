@@ -121,7 +121,7 @@
     "normalize.css": "8.0.1",
     "npm-run-all2": "9.0.3",
     "postcss": "8.5.26",
-    "postcss-import": "16.2.0",
+    "postcss-import": "17.0.0",
     "postcss-preset-env": "11.5.0",
     "prettier": "3.9.6",
     "pretty-quick": "4.2.2",
