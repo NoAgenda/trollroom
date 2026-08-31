@@ -63,7 +63,7 @@
     "chalk": "6.0.0",
     "cheerio": "1.2.0",
     "commander": "9.0.0",
-    "content-disposition": "2.0.1",
+    "content-disposition": "3.0.0",
     "express": "4.22.2",
     "file-type": "22.0.2",
     "filenamify": "7.0.2",
