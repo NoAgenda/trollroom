@@ -184,7 +184,6 @@ export default async function (
 		};
 	}
 
-	// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
 	server.on("error", (err) => log.error(`${err}`));
 
 	server.listen(listenParams, () => {
