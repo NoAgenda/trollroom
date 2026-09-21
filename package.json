@@ -124,7 +124,7 @@
     "postcss": "8.5.28",
     "postcss-import": "17.0.0",
     "postcss-preset-env": "11.5.3",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "pretty-quick": "4.2.2",
     "primer-tooltips": "2.0.0",
     "sinon": "22.1.0",
