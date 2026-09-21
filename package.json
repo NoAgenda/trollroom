@@ -66,7 +66,7 @@
     "commander": "15.0.0",
     "content-disposition": "3.0.0",
     "express": "4.22.2",
-    "file-type": "22.0.2",
+    "file-type": "22.1.1",
     "filenamify": "7.0.3",
     "got": "16.0.0",
     "irc-framework": "github:kiwiirc/irc-framework#9578e59",
