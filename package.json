@@ -106,7 +106,7 @@
     "@typescript-eslint/parser": "7.18.0",
     "@vitejs/plugin-vue": "6.0.9",
     "@vitest/coverage-istanbul": "5.0.1",
-    "@vue/runtime-dom": "3.5.42",
+    "@vue/runtime-dom": "3.5.43",
     "@vue/test-utils": "2.4.6",
     "cross-env": "10.1.0",
     "cssnano": "9.0.4",
