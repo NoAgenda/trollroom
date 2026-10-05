@@ -61,7 +61,7 @@
   "dependencies": {
     "@fastify/busboy": "3.2.2",
     "bcryptjs": "3.0.3",
-    "chalk": "6.0.0",
+    "chalk": "6.0.1",
     "cheerio": "1.2.0",
     "commander": "15.0.0",
     "content-disposition": "3.0.0",
