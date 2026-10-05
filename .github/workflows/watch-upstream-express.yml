@@ -1,0 +1,25 @@
+name: Watch upstream Express version
+
+on:
+  schedule:
+    - cron: "17 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open issue when upstream adopts Express 5
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(curl --fail --silent --show-error https://raw.githubusercontent.com/thelounge/thelounge/master/package.json | jq -r '.dependencies.express')"
+          [[ "$version" == 5.* ]] || exit 0
+
+          title="Upstream adopted Express 5"
+          existing="$(gh issue list --repo "$GITHUB_REPOSITORY" --state all --limit 1000 --json title --jq ".[] | select(.title == \"$title\") | .title")"
+          [[ -n "$existing" ]] || gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body "thelounge/thelounge now uses Express $version. Remove the Dependabot ignore rules and retry the upgrade."
