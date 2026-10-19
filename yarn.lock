@@ -1260,13 +1260,13 @@
   resolved "https://registry.yarnpkg.com/@textcomplete/utils/-/utils-0.1.13.tgz#0b56a5a876fb27478b702e3ea118fa75960b4331"
   integrity sha512-5UW9Ee0WEX1s9K8MFffo5sfUjYm3YVhtqRhAor/ih7p0tnnpaMB7AwMRDKwhSIQL6O+g1fmEkxCeO8WqjPzjUA==
 
-"@tokenizer/inflate@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.npmjs.org/@tokenizer/inflate/-/inflate-0.4.1.tgz"
-  integrity sha512-2mAv+8pkG6GIZiF1kNg1jAjh27IDxEPKwdGul3snfztFerfPGI1LjDezZp3i7BElXompqEtPmoPx6c2wgtWsOA==
+"@tokenizer/inflate@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@tokenizer/inflate/-/inflate-0.5.1.tgz#d2b4171436928429e2766b70fdcaac6c592c76ae"
+  integrity sha512-56U2O6fDLFtqokwWh597IdeUgtM7j+TT9tb1soybhgA6cy163gAcVmoQr8H4Ud/CkgCkViwcuLyqtn6wYqw59Q==
   dependencies:
     debug "^4.4.3"
-    token-types "^6.1.1"
+    token-types "^6.1.2"
 
 "@tokenizer/token@^0.3.0":
   version "0.3.0"
@@ -3156,15 +3156,15 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-file-type@22.1.1:
-  version "22.1.1"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-22.1.1.tgz#5d9b20bd514657440379e57ff64ba06d3822c2a3"
-  integrity sha512-sEB0oStmeLGtpmSAD88RDNuLsvhv4iC3u0lE25CUvfCULvj49xoQ3l3K525Vn+ZzsZ6DOLajQCV6RmhwwhqiJg==
+file-type@22.2.0:
+  version "22.2.0"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-22.2.0.tgz#f4e7119f03c9807e7bb840cfd61ce1131962060b"
+  integrity sha512-XmEVJsRpQMVYC+sWFW+FKAVo2P7/lPctDdWH4UQ1r6oxhdrTobnowdM3z+ZJ93a4J8D3yDpxX0bEvRuFev0vUQ==
   dependencies:
-    "@tokenizer/inflate" "^0.4.1"
-    strtok3 "^10.3.5"
+    "@tokenizer/inflate" "^0.5.1"
+    strtok3 "^10.5.0"
     token-types "^6.1.2"
-    uint8array-extras "^1.5.0"
+    uint8array-extras "^1.6.0"
 
 filename-reserved-regex@^4.0.1:
   version "4.0.1"
@@ -5882,10 +5882,10 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
   integrity sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==
 
-strtok3@^10.3.5:
-  version "10.3.5"
-  resolved "https://registry.npmjs.org/strtok3/-/strtok3-10.3.5.tgz"
-  integrity sha512-ki4hZQfh5rX0QDLLkOCj+h+CVNkqmp/CMf8v8kZpkNVK6jGQooMytqzLZYUVYIZcFZ6yDB70EfD8POcFXiF5oA==
+strtok3@^10.5.0:
+  version "10.6.2"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-10.6.2.tgz#7fac1be17e83295b863399f01a843e962f4d648f"
+  integrity sha512-BkdixFFUt7r7LsX6aGNPVyYMLjW+M1USLlKPNbZsrZEmLFh5tGqhdfckKo6xgsZIJqdDD0CZGkeCJJwNWQIKQA==
   dependencies:
     "@tokenizer/token" "^0.3.0"
 
@@ -6079,7 +6079,7 @@ toidentifier@~1.0.1:
   resolved "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
 
-token-types@^6.1.1, token-types@^6.1.2:
+token-types@^6.1.2:
   version "6.1.2"
   resolved "https://registry.npmjs.org/token-types/-/token-types-6.1.2.tgz"
   integrity sha512-dRXchy+C0IgK8WPC6xvCHFRIWYUbqqdEIKPaKo/AcTUNzwLTK6AH7RjdLWsEZcAN/TBdtfUw3PYEgPr5VPr6ww==
@@ -6236,10 +6236,10 @@ ufo@^1.6.3:
   resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.6.4.tgz#7a8fb875fcc6382d2c7d0b3692738b0500a92467"
   integrity sha512-JFNbkD1Svwe0KvGi8GOeLcP4kAWQ609twvCdcHxq1oSL8svv39ZuSvajcD8B+5D0eL4+s1Is2D/O6KN3qcTeRA==
 
-uint8array-extras@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.npmjs.org/uint8array-extras/-/uint8array-extras-1.5.0.tgz"
-  integrity sha512-rvKSBiC5zqCCiDZ9kAOszZcDvdAHwwIKJG33Ykj43OKcWsnmcBRL09YTU4nOeHZ8Y2a7l1MgTd08SBe9A8Qj6A==
+uint8array-extras@^1.5.0, uint8array-extras@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/uint8array-extras/-/uint8array-extras-1.6.0.tgz#ab895526255bddd698e75a02992ee73f1b112ebe"
+  integrity sha512-8iAasVS4wUx0gPLjH8Xtz2PeDzTSiy8QiLGu2DT3X5GU+egFEQhpnbtkehbAwjvDcxIERmCYcysiODFmE3Ud0Q==
 
 undate@0.3.0, undate@^0.3.0:
   version "0.3.0"
