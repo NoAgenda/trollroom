@@ -109,7 +109,7 @@
     "@vue/runtime-dom": "3.5.43",
     "@vue/test-utils": "2.4.6",
     "cross-env": "10.1.0",
-    "cssnano": "9.3.2",
+    "cssnano": "9.8.0",
     "dayjs": "1.11.23",
     "emoji-regex": "11.0.0",
     "eslint": "8.57.0",
