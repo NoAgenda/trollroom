@@ -18,7 +18,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           version="$(curl --fail --silent --show-error https://raw.githubusercontent.com/thelounge/thelounge/master/package.json | jq -r '.dependencies.express')"
-          [[ "$version" == 5.* ]] || exit 0
+          [[ "$version" =~ ^[~^]?5\. ]] || exit 0
 
           title="Upstream adopted Express 5"
           existing="$(gh issue list --repo "$GITHUB_REPOSITORY" --state all --limit 1000 --json title --jq ".[] | select(.title == \"$title\") | .title")"
