@@ -59,7 +59,7 @@
     "./public/**"
   ],
   "dependencies": {
-    "@fastify/busboy": "3.2.2",
+    "@fastify/busboy": "3.2.4",
     "bcryptjs": "3.0.3",
     "chalk": "6.0.1",
     "cheerio": "1.2.0",
